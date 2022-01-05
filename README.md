@@ -1,2 +1,2 @@
 # capstone-project
-This is my capstone-project "nacHHaltig"
+Welcome to my capstone-project "nacHHaltig" 🌿
