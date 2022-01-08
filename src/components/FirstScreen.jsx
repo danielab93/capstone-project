@@ -23,14 +23,10 @@ const HeadlineContainer = styled.div`
   height: 100vh;
 `;
 
-const Headline1 = styled.h1`
-  padding-top: 2rem;
-  text-align: center; ;
-`;
+const Headline1 = styled.h1``;
 
-const Headline2 = styled.h2`
-  margin-top: 2rem;
-  text-align: center;
-`;
+const Headline2 = styled.h2``;
 
-const LogoImage = styled.img``;
+const LogoImage = styled.img`
+  width: 100px;
+`;
