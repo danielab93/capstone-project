@@ -1,12 +1,9 @@
 import styled from "styled-components";
 import { css } from "@emotion/react";
-import CircleLoader from "react-spinners/CircleLoader";
 import { useEffect, useState } from "react";
 import { saveToLocal, loadFromLocal } from "./library/localStorage";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
-
-import logo from "./images/Logo_nacHHaltig.png";
 
 import FirstScreen from "./components/Firstscreen";
 
@@ -16,7 +13,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 6000);
   }, []);
 
   return (
@@ -31,7 +28,6 @@ function App() {
             {restaurants.map((restaurant) => (
               <p key={restaurant.id}>{restaurant.name}</p>
             ))}
-            <img src={logo} alt="" />
           </section>
 
           <footer></footer>
