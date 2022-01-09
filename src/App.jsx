@@ -5,7 +5,7 @@ import { saveToLocal, loadFromLocal } from "./library/localStorage";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
 
-import NewFirstScreen from "./components/NewFirstScreen";
+import NewFirstScreen from "./pages/NewFirstScreen";
 import MainMenu from "./components/MainMenu";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, 2000);
   }, []);
 
   return (
@@ -23,10 +23,7 @@ function App() {
         <NewFirstScreen />
       ) : (
         <div>
-          <header>Test Test</header>
           <MainMenu />
-
-          <footer></footer>
         </div>
       )}
     </div>

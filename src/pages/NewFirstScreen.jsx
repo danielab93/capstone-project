@@ -18,7 +18,7 @@ function NewFirstScreen() {
 export default NewFirstScreen;
 
 const HeadlineOutsideContainer = styled.div`
-  background-color: beige;
+  background-color: var(--main-background);
   width: 100vw;
   height: 100vh;
 `;
@@ -29,11 +29,13 @@ const HeadlineInsideContainer = styled.div`
 `;
 
 const Headline1 = styled.h1`
+  color: var(--logo-one);
   margin: 50% 0 5% 0;
   text-align: center;
 `;
 
 const Headline2 = styled.h2`
+  color: var(--logo-one);
   text-align: center;
 `;
 
