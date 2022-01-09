@@ -6,7 +6,6 @@ import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
 
 import NewFirstScreen from "./components/NewFirstScreen";
-import MainMenu from "./components/MainMenu";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -24,7 +23,6 @@ function App() {
       ) : (
         <div>
           <header>Test Test</header>
-          <MainMenu />
 
           <footer></footer>
         </div>
