@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import logo from "../images/Logo_nacHHaltig.png";
-import NavLinks from "./Navlinks";
+import NavLinks from "./NavLinks";
 
 import Restaurants from "../pages/Restaurants";
 import Shopping from "../pages/Shopping";
