@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import logo from "../images/Logo_nacHHaltig.png";
+import NavLinks from "./Navlinks";
 
 import Restaurants from "../pages/Restaurants";
 import Shopping from "../pages/Shopping";
@@ -18,25 +19,18 @@ function MainMenu() {
         </Link>
       </Header>
 
-      <NavContainer>
-        <LinkStyle>
-          <NavLink to="restaurants">Restaurants</NavLink> <br />
-        </LinkStyle>
-        <LinkStyle>
-          <NavLink to="shopping">Shopping</NavLink> <br />
-        </LinkStyle>
-        <LinkStyle>
-          <NavLink to="beauty">Beauty </NavLink> <br />
-        </LinkStyle>
-        <LinkStyle>
-          <NavLink to="favoriten">Favoriten</NavLink> <br />
-        </LinkStyle>
-        <LinkStyle>
-          <NavLink to="co2-rechner">Co2-Rechner</NavLink> <br />
-        </LinkStyle>
-      </NavContainer>
       <Routes>
-        <Route path="/" element={<LogoImage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <LogoImage />
+              <NavContainer>
+                <NavLinks />
+              </NavContainer>
+            </>
+          }
+        />
         <Route path="restaurants" element={<Restaurants />}></Route>
         <Route path="shopping" element={<Shopping />}></Route>
         <Route path="beauty" element={<Beauty />}></Route>
@@ -68,7 +62,7 @@ const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30%;
+  margin-top: 20%; // Elemente sollen sich gleichmäßig vertikal verteilen, mittig
 
   a {
     background: var(--logo-two);
@@ -77,6 +71,12 @@ const NavContainer = styled.div`
     border-radius: 5px;
     text-decoration: none;
     padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.3rem;
+    display: block;
+    width: 70%;
+    text-align: center;
   }
 
   a.active {
@@ -84,10 +84,4 @@ const NavContainer = styled.div`
     color: var(--logo-two);
     border: 3px solid var(--color-one);
   }
-`;
-
-const LinkStyle = styled.div`
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 2.5rem;
 `;
