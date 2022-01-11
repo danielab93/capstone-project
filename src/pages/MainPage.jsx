@@ -1,8 +1,6 @@
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import MainMenu from "../components/MainMenu";
 
-import Header from "../components/Header";
-
 import Restaurants from "../pages/Restaurants";
 import Shopping from "../pages/Shopping";
 import Beauty from "../pages/Beauty";
@@ -13,10 +11,6 @@ import NotFound from "../pages/NotFound";
 function MainPage() {
   return (
     <>
-      <Link to="/">
-        <Header />
-      </Link>
-
       <Routes>
         <Route
           path="/"

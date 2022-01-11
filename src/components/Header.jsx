@@ -15,10 +15,10 @@ const StyledHeader = styled.header`
   border-bottom: 2px solid var(--logo-one);
   display: flex;
   justify-content: center;
-  margin-top: -1rem;
 `;
 
 const LogoImage = styled.img`
+  margin-top: 0.5rem;
   justify-self: center;
   display: block;
   width: auto;
