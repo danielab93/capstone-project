@@ -4,7 +4,7 @@ import { saveToLocal, loadFromLocal } from "./library/localStorage";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
 
-import NewFirstScreen from "./pages/NewFirstScreen";
+import NewFirstScreen from "./pages/FirstScreen";
 import MainMenu from "./components/MainPage";
 
 function App() {

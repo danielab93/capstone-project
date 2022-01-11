@@ -130,8 +130,8 @@ const NavbarStyled = styled.footer`
     stroke: var(--logo-one);
   }
 
-  a.active {
-    border: 1px solid black;
-    background-color: hotpink;
+  a.active svg {
+    fill: var(--color-two);
+    stroke: var(--color-three);
   }
 `;
