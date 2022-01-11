@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NavLinks from "./Navlinks";
+import NavLinks from "./NavLinks";
 
 function MainMenu() {
   return (
