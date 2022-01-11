@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { css } from "@emotion/react";
 import { useEffect, useState } from "react";
 import { saveToLocal, loadFromLocal } from "./library/localStorage";
+import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { restaurants, shops, beautyspots } from "./library/data.js";
 
 import NewFirstScreen from "./pages/NewFirstScreen";
-import MainMenu from "./components/MainPage";
+import MainMenu from "./components/MainMenu";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -30,3 +33,9 @@ function App() {
 export default App;
 
 /* --- STYLING --- */
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
