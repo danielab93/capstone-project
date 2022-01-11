@@ -1,7 +1,11 @@
+import styled from "styled-components";
+import FooterNavbar from "../components/FooterNavbar";
+
 function Beauty() {
   return (
     <>
-      <h2>Beauty</h2>
+      <h1>Beauty</h1>
+      <FooterNavbar />
     </>
   );
 }
