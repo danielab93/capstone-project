@@ -14,6 +14,7 @@ function FooterNavbar() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              id="pathcutlery"
               d="M73.9375 4.15C73.9375 1.55625 71.6625 0 69.3875 0H68.25C58.5812 0 51.1875 9.85625 51.1875 24.3812V29.05C51.1875 34.2375 54.0312 38.9062 59.15 41.5C57.4437 47.725 56.875 54.4688 56.875 54.4688V75.2188C56.875 79.3688 60.8562 83 65.4062 83C69.9563 83 73.9375 79.3688 73.9375 75.2188V54.4688C73.9375 52.3937 73.3687 47.2062 72.2312 42.5375C73.3687 41.5 73.9375 40.4625 73.9375 38.9062V4.15Z"
               fill=""
               stroke=""
@@ -127,5 +128,10 @@ const NavbarStyled = styled.footer`
   a svg {
     fill: var(--logo-two);
     stroke: var(--logo-one);
+  }
+
+  a.active {
+    border: 1px solid black;
+    background-color: hotpink;
   }
 `;
