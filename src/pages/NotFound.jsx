@@ -6,9 +6,9 @@ function NotFound() {
 
   useEffect(() => {
     setTimeout(() => {
-      navigate("/", { message: "Ups, hier geht es wohl nicht weiter" });
+      navigate("/");
       // Redirect auf die Home
-    }, 4000);
+    }, 5000);
   }, []);
 
   return <img src="https://http.cat/404" />;

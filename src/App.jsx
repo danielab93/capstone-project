@@ -5,7 +5,7 @@ import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
 
 import NewFirstScreen from "./pages/NewFirstScreen";
-import MainMenu from "./components/MainMenu";
+import MainMenu from "./components/MainPage";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 5000);
   }, []);
 
   return (
