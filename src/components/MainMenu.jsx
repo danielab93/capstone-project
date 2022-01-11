@@ -62,7 +62,7 @@ const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20%; // Elemente sollen sich gleichmäßig vertikal verteilen, mittig
+  margin-top: 20%;
 
   a {
     background: var(--logo-two);
