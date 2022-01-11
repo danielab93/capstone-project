@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { css } from "@emotion/react";
 import { useEffect, useState } from "react";
 import { saveToLocal, loadFromLocal } from "./library/localStorage";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
 
-import NewFirstScreen from "./components/NewFirstScreen";
+import NewFirstScreen from "./pages/NewFirstScreen";
+import MainMenu from "./components/MainPage";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, 5000);
   }, []);
 
   return (
@@ -22,9 +22,7 @@ function App() {
         <NewFirstScreen />
       ) : (
         <div>
-          <header>Test Test</header>
-
-          <footer></footer>
+          <MainMenu />
         </div>
       )}
     </div>
@@ -34,9 +32,3 @@ function App() {
 export default App;
 
 /* --- STYLING --- */
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-  border-color: red;
-`;
