@@ -112,6 +112,7 @@ function FooterNavbar() {
 export default FooterNavbar;
 
 const NavbarStyled = styled.footer`
+  background-color: var(--main-background);
   border: 3px solid var(--logo-one);
   border-radius: 10px;
   display: flex;
@@ -119,7 +120,7 @@ const NavbarStyled = styled.footer`
   position: fixed;
   right: 0;
   left: 0;
-  bottom: 0rem;
+  bottom: 0;
   margin: 0.8rem 0.8rem;
   padding: 0.7rem 0 0.5rem 0;
   z-index: 100;
