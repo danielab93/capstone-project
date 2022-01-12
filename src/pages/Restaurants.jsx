@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
@@ -19,10 +20,16 @@ function Restaurants() {
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
       <h2>Restaurants</h2>
-      <section>{restaurantCards}</section>
+      <OuterCardContainer>
+        <section>{restaurantCards}</section>
+      </OuterCardContainer>
       <FooterNavbar />
     </>
   );
 }
 
 export default Restaurants;
+
+const OuterCardContainer = styled.div`
+  margin-bottom: 6.2rem;
+`;

@@ -120,7 +120,7 @@ const NavbarStyled = styled.footer`
   position: fixed;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 0rem;
   margin: 0.8rem 0.8rem;
   padding: 0.7rem 0 0.5rem 0;
   z-index: 100;

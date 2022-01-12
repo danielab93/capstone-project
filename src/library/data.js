@@ -1,3 +1,9 @@
+import bodhi from "../images/bodhi.png";
+import mamalicious from "../images/mamalicious.png";
+import azeitona from "../images/azeitona.png";
+import vincentvegan from "../images/vincentvegan.png";
+import rawlikesushi from "../images/rawlikesushi.png";
+
 const restaurants = [
   {
     id: 1,
@@ -6,12 +12,11 @@ const restaurants = [
     adresse: [
       { strasse: "Borgweg", hausnummer: "11", plz: "22303", ort: "Hamburg" },
     ],
-    zeiten: "So – Do: 11.30 – 22.30 Uhr, Fr + Sa: 11.30 – 23.00 Uhr",
+    zeiten: "So – Do: 11.30 – 22.30 Uhr, Fr + Sa: 11.30 – 23.00 Uhr ",
     telefon: "040 27880368",
     email: "service@bodhihamburg.de",
     website: "https://www.bodhihamburg.de/",
-    image:
-      "https://static.lieferando.de/images/restaurants/de/O7RNR0PN/logo_465x320.png",
+    image: bodhi,
   },
   {
     id: 2,
@@ -25,11 +30,11 @@ const restaurants = [
         ort: "Hamburg",
       },
     ],
-    zeiten: "Mo - So: 10 - 16 Uhr, Dienstag: Ruhetag",
+    zeiten: "Mo - So: 10 - 16 Uhr, Dienstag: Ruhetag ",
     telefon: "040 37026944",
     email: "mama@mamaknows.de",
     website: "https://mamaknows.de/",
-    image: "https://prinz.de/wp-content/uploads/2013/10/mamalicious-1.jpg",
+    image: mamalicious,
   },
   {
     id: 3,
@@ -45,14 +50,13 @@ const restaurants = [
       },
     ],
     zeiten: [
-      "Mo - Do: 12 - 23 Uhr, Fr - Sa: 12 - 01.30 Uhr",
-      "So - Fr: 12 - 23 Uhr, Sa: 12 - 0 Uhr",
+      "Mo - Do: 12 - 23 Uhr, Fr - Sa: 12 - 01.30 Uhr ",
+      "So - Fr: 12 - 23 Uhr, Sa: 12 - 0 Uhr ",
     ],
     telefon: "040 18007371",
     email: "",
     website: "https://azeitona.de/",
-    image:
-      "https://media-cdn.tripadvisor.com/media/photo-p/07/bd/79/c9/azeitona.jpg",
+    image: azeitona,
   },
   {
     id: 4,
@@ -74,15 +78,14 @@ const restaurants = [
       },
     ],
     zeiten: [
-      "Mo - Sa: 11 - 19 Uhr, So: Geschlossen",
-      "So - Do: 11.30 - 21 Uhr, Fr - Sa: 11.30 – 22 Uhr",
-      "Mo - Sa: 11.30 - 19.30 Uhr, So: Geschlossen",
+      "Mo - Sa: 11 - 19 Uhr, So: Geschlossen ",
+      "So - Do: 11.30 - 21 Uhr, Fr - Sa: 11.30 – 22 Uhr ",
+      "Mo - Sa: 11.30 - 19.30 Uhr, So: Geschlossen ",
     ],
     telefon: ["040 76753852", "040 30086531", "040 30377285"],
     email: "info@vincent-vegan.com",
     website: "https://vincent-vegan.com/",
-    image:
-      "https://media-cdn.tripadvisor.com/media/photo-s/1c/d9/c9/83/vincent-vegan.jpg",
+    image: vincentvegan,
   },
   {
     id: 5,
@@ -96,29 +99,71 @@ const restaurants = [
         ort: "Hamburg",
       },
     ],
-    zeiten: "Do - Mo: 18 - 23 Uhr",
+    zeiten: "Do - Mo: 18 - 23 Uhr ",
     telefon: "040 476731",
     email: "more@raw-like-sushi.de",
     website: "https://www.raw-like-sushi.de/",
-    image:
-      "https://www.raw-like-sushi.de/images/image_slider/home/IMG_0735-bm-1900.jpg",
+    image: rawlikesushi,
   },
 ];
 
 const shops = [
   {
-    id: 0,
-    name: "Creola Katherine Johnson",
-    imageId: "MK3eW3A",
+    id: 1,
+    name: "Bio.lose",
+    art: "Lebensmittel",
+    adresse: [
+      {
+        strasse: "Osterstraße",
+        hausnummer: "81",
+        plz: "20259",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: "Mo - Fr: 8 - 20 Uhr, Sa: 8 - 18 Uhr",
+    telefon: "040 40195700",
+    email: "info@biolose.de",
+    website: "https://www.biolose.de/",
+    image: "",
+  },
+  {
+    id: 2,
+    name: "glore",
+    art: "Mode",
+    adresse: [
+      {
+        strasse: "Marktstraße",
+        hausnummer: "31",
+        plz: "20357",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: "Mo - Sa: 11 - 19 Uhr",
+    telefon: "040 35777650",
+    email: "karoviertel@glore-hamburg.de",
+    website: "https://www.glore-hamburg.de/",
+    image: "",
+  },
+  {
+    id: 2,
+    name: "glore",
+    art: "Mode",
+    adresse: [
+      {
+        strasse: "Marktstraße",
+        hausnummer: "31",
+        plz: "20357",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: "Mo - Sa: 11 - 19 Uhr",
+    telefon: "040 35777650",
+    email: "karoviertel@glore-hamburg.de",
+    website: "https://www.glore-hamburg.de/",
+    image: "",
   },
 ];
 
-const beautyspots = [
-  {
-    id: 0,
-    name: "Creola Katherine Johnson",
-    imageId: "MK3eW3A",
-  },
-];
+const beautyspots = [{}];
 
 export { restaurants, shops, beautyspots };

@@ -18,6 +18,10 @@ const StyledHeader = styled.header`
   border-bottom: 2px solid var(--logo-one);
   display: flex;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  overflow: hidden;
 `;
 
 const LogoImage = styled.img`
