@@ -5,7 +5,7 @@ import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { restaurants, shops, beautyspots } from "./library/data.js";
 
 import NewFirstScreen from "./pages/FirstScreen";
-import MainMenu from "./components/MainPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -13,7 +13,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 1000);
   }, []);
 
   return (
@@ -22,7 +22,7 @@ function App() {
         <NewFirstScreen />
       ) : (
         <div>
-          <MainMenu />
+          <MainPage />
         </div>
       )}
     </div>
@@ -30,5 +30,3 @@ function App() {
 }
 
 export default App;
-
-/* --- STYLING --- */
