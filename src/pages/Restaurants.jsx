@@ -12,7 +12,7 @@ function Restaurants() {
       key={restaurant.id}
       name={restaurant.name}
       type={restaurant.art}
-      adress={restaurant.adresse}
+      address={restaurant.adresse}
       hours={restaurant.zeiten}
     />
   ));
@@ -21,7 +21,7 @@ function Restaurants() {
       <Link to="/">
         <Header image={restaurantheader} altText="Restaurant Header" />
       </Link>
-      <h1>Restaurants</h1>
+      <h2>Restaurants</h2>
       <section>{restaurantCards}</section>
       <FooterNavbar />
     </>
