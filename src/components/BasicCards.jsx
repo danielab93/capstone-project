@@ -1,14 +1,24 @@
 import styled from "styled-components";
 
-function BasicCards({ name, art, adresse, zeiten }) {
+function BasicCards({ name, type, adress, hours }) {
+  const streetName = adress.map((onlyStreet) => onlyStreet.strasse);
+  const houseNumber = adress.map((onlyNumber) => onlyNumber.hausnummer);
+  const postCode = adress.map((onlyPostcode) => onlyPostcode.plz);
+  const city = adress.map((onlyCity) => onlyCity.ort);
+  const fullAddress = streetName + houseNumber;
+  console.log(streetName);
+
   return (
     <>
       <CardContainer>
         <h3>{name}</h3>
         <ul>
-          <li>Art: {art}</li>
-          <li>Adresse: {adresse}</li>
-          <li>Öffnungszeiten: {zeiten}</li>
+          <li>Art: {type}</li>
+          <li>
+            Adresse: {streetName.join(", ")} {houseNumber.join(" ")} {postCode}{" "}
+            {city}
+          </li>
+          <li>Öffnungszeiten: {hours}</li>
         </ul>
       </CardContainer>
     </>

@@ -11,9 +11,9 @@ function Restaurants() {
     <BasicCards
       key={restaurant.id}
       name={restaurant.name}
-      art={restaurant.art}
-      adresse={restaurant.adresse[0].strasse}
-      zeiten={restaurant.zeiten}
+      type={restaurant.art}
+      adress={restaurant.adresse}
+      hours={restaurant.zeiten}
     />
   ));
   return (
