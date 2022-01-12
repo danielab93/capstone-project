@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { Routes, Route, NavLink, Link } from "react-router-dom";
 
 function Header({ image, altText }) {
   return (
     <StyledHeader>
-      <LogoImage src={image} alt={altText} />
+      <Link to="/">
+        <LogoImage src={image} alt={altText} />
+      </Link>
     </StyledHeader>
   );
 }
