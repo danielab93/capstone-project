@@ -105,7 +105,6 @@ function FooterNavbar() {
           </svg>
         </NavLink>
       </NavbarStyled>
-      <Outlet />
     </>
   );
 }
