@@ -1,9 +1,12 @@
 import styled from "styled-components";
-import NavLinks from "./Navlinks";
+import NavLinks from "./NavLinks";
+import Header from "./Header";
+import logo from "../images/Logo_nacHHaltig.png";
 
 function MainMenu() {
   return (
     <>
+      <Header image={logo} altText="Logo" />
       <NavContainer>
         <NavLinks />
       </NavContainer>
