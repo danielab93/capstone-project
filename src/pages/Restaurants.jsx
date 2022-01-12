@@ -18,7 +18,8 @@ function Restaurants() {
   return (
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
-      <h1>Restaurants</h1>
+      <h2>Restaurants</h2>
+      <section>{restaurantCards}</section>
       <FooterNavbar />
     </>
   );
