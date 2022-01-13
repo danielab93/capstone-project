@@ -3,17 +3,21 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
-import BasicCards from "../components/BasicCards";
+import InformationCards from "../components/InformationCards";
 import { restaurants } from "../library/data.js";
 
 function Restaurants() {
   const restaurantCards = restaurants.map((restaurant) => (
-    <BasicCards
+    <InformationCards
       key={restaurant.id}
       name={restaurant.name}
       type={restaurant.art}
       address={restaurant.adresse}
       hours={restaurant.zeiten}
+      phone={restaurant.telefon}
+      email={restaurant.email}
+      website={restaurant.website}
+      image={restaurant.image}
     />
   ));
   return (
@@ -30,6 +34,7 @@ function Restaurants() {
 
 export default Restaurants;
 
+// this styling needs to be moved to InformationCards
 const OuterCardContainer = styled.div`
   margin-bottom: 6.2rem;
 `;

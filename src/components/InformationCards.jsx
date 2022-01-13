@@ -1,22 +1,38 @@
 import styled from "styled-components";
 import { restaurants } from "../library/data";
 
-function BasicCards({ name, type, address, hours }) {
-  const fullAddress = address.map((singleAddress) => {
-    return (
-      <>
-        {singleAddress.strasse} {singleAddress.hausnummer}
-        {", "}
-        {singleAddress.plz} {singleAddress.ort} <br />
-      </>
-    );
-  });
-
-  /* const separateHours = hours.map((singleHour) => {
+function BasicCards({
+  name,
+  type,
+  address,
+  hours,
+  phone,
+  email,
+  website,
+  image,
+}) {
+  const separateHours = hours.map((singleHour) => {
     return <>{singleHour}</>;
   });
 
-  console.log(separateHours); */
+  const fullAddress = address.map((singleAddress) => {
+    return (
+      <>
+        <ul>
+          <li>
+            Adresse: <br />
+            {singleAddress.strasse} {singleAddress.hausnummer}
+            {", "}
+          </li>
+          <li>
+            {" "}
+            {singleAddress.plz} {singleAddress.ort}{" "}
+          </li>
+          <li>Öffnungszeiten: {separateHours}</li>
+        </ul>
+      </>
+    );
+  });
 
   return (
     <>
@@ -24,12 +40,8 @@ function BasicCards({ name, type, address, hours }) {
         <CardHeadline>{name}</CardHeadline>
         <ul>
           <li>Art: {type}</li>
-          <li>
-            Standorte: <br />
-            {fullAddress}
-          </li>
-          <li>Öffnungszeiten: {hours}</li>
         </ul>
+        <section>{fullAddress}</section>
       </CardContainer>
     </>
   );
