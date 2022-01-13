@@ -26,6 +26,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
 ul,
 ol {
   list-style: none;

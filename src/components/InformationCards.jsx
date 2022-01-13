@@ -18,8 +18,8 @@ function BasicCards({
         <CardHeadline>{name}</CardHeadline>
         <InfoContainer>
           <ul>
-            <li>{category}</li>
-            <li>{info}</li>
+            <CategoryText>{category}</CategoryText>
+            <InfoText>{info}</InfoText>
           </ul>
           <div>
             <CardImage src={image} alt="" />
@@ -54,6 +54,14 @@ const InfoContainer = styled.div`
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+`;
+
+const CategoryText = styled.li`
+  font-weight: 900;
+`;
+
+const InfoText = styled.li`
+  font-size: 0.9rem;
 `;
 
 const CardImage = styled.img`
