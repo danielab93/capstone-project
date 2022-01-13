@@ -3,7 +3,8 @@ import { restaurants } from "../library/data";
 
 function BasicCards({
   name,
-  type,
+  category,
+  info,
   address,
   hours,
   phone,
@@ -11,45 +12,27 @@ function BasicCards({
   website,
   image,
 }) {
-  const separateHours = hours.map((singleHour) => {
-    return <>{singleHour}</>;
-  });
-
-  const fullAddress = address.map((singleAddress) => {
-    return (
-      <>
-        <ul>
-          <li>
-            Adresse: <br />
-            {singleAddress.strasse} {singleAddress.hausnummer}
-            {", "}
-          </li>
-          <li>
-            {" "}
-            {singleAddress.plz} {singleAddress.ort}{" "}
-          </li>
-          <li>Öffnungszeiten: {separateHours}</li>
-        </ul>
-      </>
-    );
-  });
-
   return (
     <>
-      <CardContainer>
+      <SingleCardContainer>
         <CardHeadline>{name}</CardHeadline>
-        <ul>
-          <li>Art: {type}</li>
-        </ul>
-        <section>{fullAddress}</section>
-      </CardContainer>
+        <InfoContainer>
+          <ul>
+            <li>{category}</li>
+            <li>{info}</li>
+          </ul>
+          <div>
+            <CardImage src={image} alt="" />
+          </div>
+        </InfoContainer>
+      </SingleCardContainer>
     </>
   );
 }
 
 export default BasicCards;
 
-const CardContainer = styled.div`
+const SingleCardContainer = styled.div`
   background: var(--main-background);
   color: var(--color-one);
   border: 3px solid var(--color-three);
@@ -63,4 +46,21 @@ const CardHeadline = styled.h3`
   border-radius: 5px;
   margin: 0 0 0.5rem 0;
   padding: 0.2rem;
+`;
+
+const InfoContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+`;
+
+const CardImage = styled.img`
+  border-radius: 5px;
+  display: block;
+  float: right;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
 `;

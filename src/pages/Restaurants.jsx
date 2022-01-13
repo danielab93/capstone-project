@@ -11,7 +11,8 @@ function Restaurants() {
     <InformationCards
       key={restaurant.id}
       name={restaurant.name}
-      type={restaurant.art}
+      category={restaurant.kategorie}
+      info={restaurant.info}
       address={restaurant.adresse}
       hours={restaurant.zeiten}
       phone={restaurant.telefon}
@@ -34,7 +35,7 @@ function Restaurants() {
 
 export default Restaurants;
 
-// this styling needs to be moved to InformationCards
+// this styling still needs to be moved to InformationCards
 const OuterCardContainer = styled.div`
   margin-bottom: 6.2rem;
 `;
