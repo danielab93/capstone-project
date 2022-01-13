@@ -8,6 +8,11 @@ import stueckgut from "../images/stueckgut.png";
 import glore from "../images/glore.png";
 import vunderland from "../images/vunderland.png";
 import wochenmarkt from "../images/wochenmarkt-eppendorf.png";
+import schnittstubeverde from "../images/schnittstube-verde.png";
+import stinevega from "../images/stine-vega.png";
+import heikevossberg from "../images/naturkosmetikum-heikevossberg.png";
+import mimulus from "../images/mimulus.png";
+import jeannie from "../images/jeannie.png";
 
 const restaurants = [
   {
@@ -124,7 +129,7 @@ const shops = [
     id: 1,
     name: "Bio.lose",
     kategorie: "Lebensmittel & Drogerie",
-    info: "Bio-Lebensmittel und Non-food Artikel ohne Einwegverpackungen. Hier wird nachhaltiges Einkaufen Wirklichkeit.",
+    info: "Bio-Lebensmittel und Artikel ohne Einwegverpack- ungen. Hier wird nachhaltiges Einkaufen Wirklichkeit.",
     adresse: [
       {
         strasse: "Osterstraße",
@@ -143,7 +148,7 @@ const shops = [
     id: 2,
     name: "Stückgut - Unverpackt Einkaufen",
     kategorie: "Lebensmittel & Drogerie",
-    info: "Artikel für den täglichen Bedarf – unverpackt und umweltverträglich. Hier findest du Lebensmittel sowie Produkte für Haushalt und Körperhygiene.",
+    info: "Lebensmittel sowie Produkte für Haushalt und Körperhygiene - unverpackt und umweltverträglich.",
     adresse: [
       {
         strasse: "Friedensallee",
@@ -207,7 +212,7 @@ const shops = [
     id: 5,
     name: "Bio-Wochenmarkt Eppendorf",
     kategorie: "Lebensmittel",
-    info: "Produkte aus ökologischer Erzeugung und eine breite Palette an verantwortungsvoll produzierten Waren aus der Region.",
+    info: "Produkte aus ökologischer Erzeugung sowie verantwortungsvoll produzierte Waren aus der Region.",
     adresse: [
       {
         strasse: "Marie-Jonas-Platz",
@@ -224,6 +229,105 @@ const shops = [
   },
 ];
 
-const beautyspots = [{}];
+/* ----------- BEAUTY----------- */
+
+const beautyspots = [
+  {
+    id: 1,
+    name: "Schnittstube Verde",
+    kategorie: "Friseur",
+    info: "Wir arbeiten mit naturnaher Haarkosmetik, die keine Wünsche offen lässt.",
+    adresse: [
+      {
+        strasse: "Zimmerstrasse",
+        hausnummer: "14",
+        plz: "22085",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: ["Di-Fr: 10-19 Uhr, Sa: 10-15 Uhr"],
+    telefon: "040 80797864",
+    email: "info@schnittstube-verde.de",
+    website: "https://schnittstube-verde.de/",
+    image: schnittstubeverde,
+  },
+  {
+    id: 2,
+    name: "Stine Vega",
+    kategorie: "Friseur",
+    info: "Stine Vega überzeugt mit ihrer professionellen Arbeit und verwendet zudem hochwertige vegane Produkte.",
+    adresse: [
+      {
+        strasse: "Koppel",
+        hausnummer: "29",
+        plz: "20099",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: ["Di-Sa: 10-18 Uhr"],
+    telefon: "0176 55497445",
+    email: "stine.vega.hair@gmail.com",
+    website: "https://www.stinevega.com/",
+    image: stinevega,
+  },
+  {
+    id: 3,
+    name: "Jeannie Nagelstudio",
+    kategorie: "Kosmetik",
+    info: "Healthy, Vegan und Cruelty-Free! Lass dich bei uns verwöhnen.",
+    adresse: [
+      {
+        strasse: "Borgweg",
+        hausnummer: "3",
+        plz: "22303",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: ["Mo-Fr: 10-20 Uhr, Sa: 10-18 Uhr"],
+    telefon: "040 60950950",
+    email: "kundenservice@jeannie-nagelstudio.de",
+    website: "http://jeannie-nagelstudio.de/",
+    image: jeannie,
+  },
+
+  {
+    id: 4,
+    name: "NATURKOSMETIKUM - Heike Vossberg",
+    kategorie: "Kosmetik",
+    info: "Jede Haut ist empfindsam und einzigartig. Und genau so behandeln wir sie.",
+    adresse: [
+      {
+        strasse: "Klosterallee",
+        hausnummer: "108",
+        plz: "20144",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: ["Di-Fr: 10-19 Uhr, Sa: 10-16.30 Uhr"],
+    telefon: "040 48096305",
+    email: "info@naturkosmetikum.com",
+    website: "https://www.naturkosmetikum.com/",
+    image: heikevossberg,
+  },
+  {
+    id: 5,
+    name: "Mimulus Naturkosmetik",
+    kategorie: "Kosmetik",
+    info: "MIMULUS bietet ein breites Sortiment von Naturkosmetik aus aller Welt und überzeugt mit kompetenter Beratung.",
+    adresse: [
+      {
+        strasse: "Schanzenstraße",
+        hausnummer: "39",
+        plz: "20357",
+        ort: "Hamburg",
+      },
+    ],
+    zeiten: ["Mo-Fr: 10-18.30 Uhr, Sa: 11-16.30 Uhr"],
+    telefon: "040 4308037 ",
+    email: "info@mimulus-kosmetik.de",
+    website: "https://mimulus-kosmetik.de/",
+    image: mimulus,
+  },
+];
 
 export { restaurants, shops, beautyspots };

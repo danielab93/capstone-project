@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
 import InformationCards from "../components/InformationCards";
 import { restaurants } from "../library/data.js";
 
