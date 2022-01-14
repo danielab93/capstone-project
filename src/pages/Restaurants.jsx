@@ -23,18 +23,13 @@ function Restaurants() {
   return (
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
-      <h2>Restaurants</h2>
-      <OuterCardContainer>
+      <main>
+        <h2>Restaurants</h2>
         <section>{restaurantCards}</section>
-      </OuterCardContainer>
+      </main>
       <FooterNavbar />
     </>
   );
 }
 
 export default Restaurants;
-
-// this styling still needs to be moved to InformationCards
-const OuterCardContainer = styled.div`
-  margin-bottom: 6.2rem;
-`;
