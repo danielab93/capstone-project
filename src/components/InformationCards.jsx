@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { restaurants } from "../library/data";
 
 function BasicCards({
   name,
