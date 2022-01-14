@@ -24,9 +24,9 @@ function Restaurants() {
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
       <h2>Restaurants</h2>
-      {/* <OuterCardContainer> */}
+      <OuterCardContainer>
       <section>{restaurantCards}</section>
-      {/* </OuterCardContainer> */}
+      </OuterCardContainer>
       <FooterNavbar />
     </>
   );
@@ -35,7 +35,6 @@ function Restaurants() {
 export default Restaurants;
 
 // this styling still needs to be moved to InformationCards
-/* const OuterCardContainer = styled.div`
+const OuterCardContainer = styled.div`
   margin-bottom: 6.2rem;
 `;
- */
