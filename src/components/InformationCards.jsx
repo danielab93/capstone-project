@@ -32,7 +32,7 @@ function BasicCards({
 
 export default BasicCards;
 
-const SingleCardContainer = styled.div`
+const SingleCardContainer = styled.section`
   background: var(--main-background);
   color: var(--color-one);
   border: 3px solid var(--color-three);
@@ -43,6 +43,7 @@ const SingleCardContainer = styled.div`
 
 const CardHeadline = styled.h3`
   background-color: var(--logo-two);
+  color: var(--logo-one);
   border-radius: 5px;
   margin: 0 0 0.5rem 0;
   padding: 0.2rem;
