@@ -26,6 +26,23 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li,
+ol li {
+  list-style: none;
+  padding: 0;
+}
+
 `;
 
 export default GlobalStyle;
