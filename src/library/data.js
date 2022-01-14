@@ -23,7 +23,7 @@ const restaurants = [
     adresse: [
       { strasse: "Borgweg", hausnummer: "11", plz: "22303", ort: "Hamburg" },
     ],
-    zeiten: ["So–Do: 11.30–22.30 Uhr, Fr+Sa: 11.30–23.00 Uhr "],
+    zeiten: ["So–Do: 11.30–22.30 Uhr, Fr-Sa: 11.30–23.00 Uhr "],
     telefon: ["040 27880368"],
     email: "service@bodhihamburg.de",
     website: "https://www.bodhihamburg.de/",
@@ -67,7 +67,7 @@ const restaurants = [
       "So-Fr: 12-23 Uhr, Sa: 12-0 Uhr ",
     ],
     telefon: ["040 18007371", "040 53277020"],
-    email: "",
+    email: "/",
     website: "https://azeitona.de/",
     image: azeitona,
   },
