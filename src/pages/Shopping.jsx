@@ -12,9 +12,7 @@ function Shopping() {
       name={shop.name}
       category={shop.kategorie}
       info={shop.info}
-      address={shop.adresse}
-      hours={shop.zeiten}
-      phone={shop.telefon}
+      contact={shop.kontakt}
       email={shop.email}
       website={shop.website}
       image={shop.image}

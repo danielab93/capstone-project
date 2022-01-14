@@ -12,9 +12,7 @@ function Restaurants() {
       name={restaurant.name}
       category={restaurant.kategorie}
       info={restaurant.info}
-      address={restaurant.adresse}
-      hours={restaurant.zeiten}
-      phone={restaurant.telefon}
+      contact={restaurant.kontakt}
       email={restaurant.email}
       website={restaurant.website}
       image={restaurant.image}

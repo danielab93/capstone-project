@@ -12,9 +12,7 @@ function Beauty() {
       name={beauty.name}
       category={beauty.kategorie}
       info={beauty.info}
-      address={beauty.adresse}
-      hours={beauty.zeiten}
-      phone={beauty.telefon}
+      contact={beauty.kontakt}
       email={beauty.email}
       website={beauty.website}
       image={beauty.image}
