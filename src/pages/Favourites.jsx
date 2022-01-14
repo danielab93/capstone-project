@@ -7,7 +7,9 @@ function Favourites() {
   return (
     <>
       <Header image={favoritenheader} altText="Favoriten Header" />
-      <h1>Favoriten</h1>
+      <main>
+        <h2>Favoriten</h2>
+      </main>
       <FooterNavbar />
     </>
   );

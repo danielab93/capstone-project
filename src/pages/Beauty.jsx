@@ -24,18 +24,13 @@ function Beauty() {
   return (
     <>
       <Header image={beautyheader} altText="Beauty Header" />
-      <h2>Beauty</h2>
-      <OuterCardContainer>
+      <main>
+        <h2>Beauty</h2>
         <section>{beautyCards}</section>
-      </OuterCardContainer>
+      </main>
       <FooterNavbar />
     </>
   );
 }
 
 export default Beauty;
-
-// this styling still needs to be moved to InformationCards
-const OuterCardContainer = styled.div`
-  margin-bottom: 6.2rem;
-`;
