@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 function FavouriteButton() {
-  function handleClick() {
-    alert("YOU CLICKED!");
+  function handleFavouriteClick() {
+    {
+      ("fill: red");
+    }
   }
 
   return (
     <>
       <FavouriteIcon
-        onClick={handleClick}
+        onClick={handleFavouriteClick}
         width="20"
         height="20"
         viewBox="0 0 84 70"
