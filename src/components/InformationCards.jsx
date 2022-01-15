@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import FavouriteButton from "./FavouriteButton";
 import ToggleButton from "./ToggleButton";
 
 function BasicCards({ name, category, info, contact, email, website, image }) {
   return (
     <>
       <SingleCardContainer>
-        <CardHeadline>{name}</CardHeadline>
+        <CardHeadline>
+          {name}
+          <FavouriteButton />
+        </CardHeadline>
         <InfoContainer>
           <ul>
             <CategoryText>{category}</CategoryText>
