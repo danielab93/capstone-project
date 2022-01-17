@@ -2,10 +2,6 @@ import styled from "styled-components";
 import { useState } from "react";
 
 function FavouriteButton({ onAddToFavourites, restaurant }) {
-  /* function handleFavouriteClick() {
-    alert("added to favourites");
-  } */
-
   return (
     <>
       <FavouriteIcon

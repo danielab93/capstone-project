@@ -21,6 +21,7 @@ function Restaurants({ onAddToFavourites }) {
       restaurant={restaurant}
     />
   ));
+
   return (
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />

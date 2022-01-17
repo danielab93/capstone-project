@@ -1,7 +1,6 @@
 import { Routes, Route, NavLink, Link } from "react-router-dom";
 import { saveToLocal, loadFromLocal } from "../Library/localStorage";
 import { useState, useEffect } from "react";
-import { restaurants, shops, beautyspots } from "../library/data.js";
 import MainMenu from "../components/MainMenu";
 
 import Restaurants from "../pages/Restaurants";
@@ -12,12 +11,6 @@ import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
 
 function MainPage() {
-  /*    const localStorageAllCards = loadFromLocal("allCards");
-  const [allCards, setAllCards] = useState(localStorageAllCards);
-  useEffect(() => {
-    saveToLocal("allCards", restaurants, shops, beautyspots);
-  }, [allCards]); */
-
   const localStorageFavouriteCards = loadFromLocal("favouriteCards");
   const [favouriteCards, setFavouriteCards] = useState(
     localStorageFavouriteCards ?? []
