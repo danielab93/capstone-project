@@ -48,15 +48,30 @@ function MainPage() {
         />
         <Route
           path="/restaurants"
-          element={<Restaurants onAddToFavourites={addToFavourites} />}
+          element={
+            <Restaurants
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
         />
         <Route
           path="/shopping"
-          element={<Shopping onAddToFavourites={addToFavourites} />}
+          element={
+            <Shopping
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
         />
         <Route
           path="/beauty"
-          element={<Beauty onAddToFavourites={addToFavourites} />}
+          element={
+            <Beauty
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
         />
         <Route
           path="/favoriten"

@@ -12,6 +12,7 @@ function InformationCards({
   website,
   image,
   onAddToFavourites,
+  isFavourite,
   restaurant,
   shop,
   beauty,
@@ -23,6 +24,7 @@ function InformationCards({
           {name}
           <FavouriteButton
             onAddToFavourites={onAddToFavourites}
+            isFavourite={isFavourite}
             restaurant={restaurant}
             shop={shop}
             beauty={beauty}

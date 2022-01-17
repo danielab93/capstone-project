@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function FavouriteButton({
   onAddToFavourites,
-  favouriteCards,
+  isFavourite,
   restaurant,
   shop,
   beauty,
@@ -15,11 +15,7 @@ function FavouriteButton({
         width="20"
         height="20"
         viewBox="0 0 84 70"
-        fill={
-          favouriteCards?.some((favourite) => favourite.id === restaurant.id)
-            ? "fill: red"
-            : "fill: blue"
-        }
+        fill={isFavourite ? "var(--color-three)" : "var(--color-two)"}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -29,9 +25,6 @@ function FavouriteButton({
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        {/*  {favouriteCards?.some((favourite) => favourite.id === restaurant.id)
-          ? "fill: red"
-          : "fill: blue"} */}
       </FavouriteIcon>
     </>
   );
@@ -42,6 +35,6 @@ export default FavouriteButton;
 const FavouriteIcon = styled.svg`
   float: right;
   vertical-align: middle;
-  fill: var(--color-two);
+  fill: ${(props) => props.fill};
   stroke: var(--color-three);
 `;
