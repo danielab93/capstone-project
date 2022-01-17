@@ -1,14 +1,28 @@
 import styled from "styled-components";
+import { restaurants } from "../library/data";
 import FavouriteButton from "./FavouriteButton";
 import ToggleButton from "./ToggleButton";
 
-function BasicCards({ name, category, info, contact, email, website, image }) {
+function InformationCards({
+  name,
+  category,
+  info,
+  contact,
+  email,
+  website,
+  image,
+  onAddToFavourites,
+  restaurant,
+}) {
   return (
     <>
       <SingleCardContainer>
         <CardHeadline>
           {name}
-          <FavouriteButton />
+          <FavouriteButton
+            onAddToFavourites={onAddToFavourites}
+            restaurant={restaurant}
+          />
         </CardHeadline>
         <InfoContainer>
           <ul>
@@ -25,7 +39,7 @@ function BasicCards({ name, category, info, contact, email, website, image }) {
   );
 }
 
-export default BasicCards;
+export default InformationCards;
 
 const SingleCardContainer = styled.section`
   background: var(--main-background);

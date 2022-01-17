@@ -3,9 +3,10 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
 import InformationCards from "../components/InformationCards";
+
 import { restaurants } from "../library/data.js";
 
-function Restaurants() {
+function Restaurants({ onAddToFavourites }) {
   const restaurantCards = restaurants.map((restaurant) => (
     <InformationCards
       key={restaurant.id}
@@ -16,6 +17,8 @@ function Restaurants() {
       email={restaurant.email}
       website={restaurant.website}
       image={restaurant.image}
+      onAddToFavourites={onAddToFavourites}
+      restaurant={restaurant}
     />
   ));
   return (
