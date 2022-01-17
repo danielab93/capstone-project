@@ -7,7 +7,7 @@ import InformationCards from "../components/InformationCards";
 import { restaurants } from "../library/data.js";
 
 function Restaurants({ onAddToFavourites, favouriteCards }) {
-  const restaurantCards = restaurants.map((restaurant, index) => (
+  const restaurantCards = restaurants.map((restaurant) => (
     <InformationCards
       keyprop={restaurant.id}
       name={restaurant.name}
