@@ -8,7 +8,7 @@ function ToggleButton({ contact, email, website }) {
     setShowMore(!showMore);
   }
 
-  const contactData = contact.map((singleContact) => {
+  const contactData = contact?.map((singleContact) => {
     return (
       <>
         <SingleContactContainer>

@@ -16,6 +16,8 @@ function Favourites({ onAddToFavourites, favouriteCards }) {
       image={favouriteCard?.image}
       onAddToFavourites={onAddToFavourites}
       restaurant={favouriteCard}
+      shop={favouriteCard}
+      beauty={favouriteCard}
     />
   ));
   return (

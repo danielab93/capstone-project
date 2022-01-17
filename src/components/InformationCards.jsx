@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { restaurants } from "../library/data";
 import FavouriteButton from "./FavouriteButton";
 import ToggleButton from "./ToggleButton";
 
@@ -13,6 +12,8 @@ function InformationCards({
   image,
   onAddToFavourites,
   restaurant,
+  shop,
+  beauty,
 }) {
   return (
     <>
@@ -22,6 +23,8 @@ function InformationCards({
           <FavouriteButton
             onAddToFavourites={onAddToFavourites}
             restaurant={restaurant}
+            shop={shop}
+            beauty={beauty}
           />
         </CardHeadline>
         <InfoContainer>
