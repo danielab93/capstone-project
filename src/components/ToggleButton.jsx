@@ -1,18 +1,18 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-function ToggleButton({ contact, email, website }) {
+function ToggleButton({ keyprop, contact, email, website }) {
   const [showMore, setShowMore] = useState(false);
 
   function handleMoreClick() {
     setShowMore(!showMore);
   }
 
-  const contactData = contact?.map((singleContact) => {
+  const contactData = contact?.map((singleContact, index) => {
     return (
       <>
         <SingleContactContainer>
-          <li>
+          <li key={index}>
             <ContactTitle> Standort: </ContactTitle> {singleContact.standort}
           </li>
           <li>
@@ -61,7 +61,7 @@ function ToggleButton({ contact, email, website }) {
           <ul>
             {contactData}
             <EmailWebContainer>
-              <li>
+              <li key={keyprop}>
                 <svg
                   width="20"
                   height="20"

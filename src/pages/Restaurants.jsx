@@ -7,9 +7,9 @@ import InformationCards from "../components/InformationCards";
 import { restaurants } from "../library/data.js";
 
 function Restaurants({ onAddToFavourites }) {
-  const restaurantCards = restaurants.map((restaurant) => (
+  const restaurantCards = restaurants.map((restaurant, index) => (
     <InformationCards
-      key={restaurant.id}
+      keyprop={restaurant.id}
       name={restaurant.name}
       category={restaurant.kategorie}
       info={restaurant.info}

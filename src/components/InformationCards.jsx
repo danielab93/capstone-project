@@ -3,6 +3,7 @@ import FavouriteButton from "./FavouriteButton";
 import ToggleButton from "./ToggleButton";
 
 function InformationCards({
+  keyprop,
   name,
   category,
   info,
@@ -36,7 +37,12 @@ function InformationCards({
             <CardImage src={image} alt="" />
           </div>
         </InfoContainer>
-        <ToggleButton contact={contact} email={email} website={website} />
+        <ToggleButton
+          key={keyprop}
+          contact={contact}
+          email={email}
+          website={website}
+        />
       </SingleCardContainer>
     </>
   );
