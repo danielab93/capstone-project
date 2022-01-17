@@ -5,7 +5,7 @@ import beautyheader from "../images/Beauty.png";
 import InformationCards from "../components/InformationCards";
 import { beautyspots } from "../library/data.js";
 
-function Beauty({ onAddToFavourites }) {
+function Beauty({ onAddToFavourites, favouriteCards }) {
   const beautyCards = beautyspots.map((beauty) => (
     <InformationCards
       key={beauty.id}
@@ -18,6 +18,9 @@ function Beauty({ onAddToFavourites }) {
       image={beauty.image}
       onAddToFavourites={onAddToFavourites}
       beauty={beauty}
+      isFavourite={favouriteCards?.some(
+        (favourite) => favourite.id === beauty.id
+      )}
     />
   ));
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 
-function ToggleButton({ keyprop, contact, email, website }) {
+function ToggleButton({ contact, email, website }) {
   const [showMore, setShowMore] = useState(false);
 
   function handleMoreClick() {
@@ -61,7 +61,7 @@ function ToggleButton({ keyprop, contact, email, website }) {
           <ul>
             {contactData}
             <EmailWebContainer>
-              <li key={keyprop}>
+              <li>
                 <svg
                   width="20"
                   height="20"
