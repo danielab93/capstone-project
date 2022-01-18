@@ -31,7 +31,7 @@ function Restaurants({ onAddToFavourites, favouriteCards }) {
       <main>
         <h2>Restaurants</h2>
         <section>{restaurantCards}</section>
-      </main>
+     </main>
       <FooterNavbar />
     </>
   );
