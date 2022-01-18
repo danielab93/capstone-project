@@ -10,17 +10,21 @@ import Favourites from "../pages/Favourites";
 import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
 
+import { restaurants } from "../library/data.js";
+
 function MainPage() {
-  const [locations, setLocations] = useState([]); // brauche ich diesen useState?
+  const [locations, setLocations] = useState(restaurants);
   const [filteredLocations, setFilteredLocations] = useState([]);
 
   const handleFilterLocations = (category) => {
     if (category === "") {
-      setFilteredLocations(""); // setFilteredLocations (zeige alle Karten)
+      setFilteredLocations(restaurants); // alle Karten zeigen
     } else {
       const updatedFilteredLocations = locations.filter(
-        (location) => location.kategorie === kategorie
+        (location) => location.kategorie === category
       );
+
+      console.log(updatedFilteredLocations);
       setFilteredLocations(updatedFilteredLocations);
     }
   };
