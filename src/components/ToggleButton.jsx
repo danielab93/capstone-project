@@ -120,7 +120,10 @@ const Button = styled.button`
   color: var(--logo-one);
   border: none;
   border-radius: 5px;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
   padding: 0.2rem;
+  width: 50%;
 `;
 
 const ContactContainer = styled.div`
