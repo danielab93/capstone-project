@@ -52,6 +52,11 @@ button {
   font-weight: bold;
 }
 
+select {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
 `;
 
 export default GlobalStyle;

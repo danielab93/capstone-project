@@ -42,7 +42,7 @@ function Restaurants({
           onFilterLocations={onFilterLocations}
         />
         <section>{restaurantCards}</section>
-     </main>
+      </main>
       <FooterNavbar />
     </>
   );

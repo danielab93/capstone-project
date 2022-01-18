@@ -10,10 +10,10 @@ import Favourites from "../pages/Favourites";
 import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
 
-import { restaurants } from "../library/data.js";
+import { restaurants, shops, beautyspots } from "../library/data.js";
 
 function MainPage() {
-  const [locations, setLocations] = useState(restaurants);
+  const [locations, setLocations] = useState(restaurants, shops, beautyspots);
   const [filteredLocations, setFilteredLocations] = useState([]);
 
   const handleFilterLocations = (category) => {
@@ -70,9 +70,9 @@ function MainPage() {
               location={
                 filteredLocations.length > 0 ? filteredLocations : locations
               }
+              onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
-              onFilterLocations={handleFilterLocations}
             />
           }
         />
@@ -82,6 +82,10 @@ function MainPage() {
             <Shopping
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
+              location={
+                filteredLocations.length > 0 ? filteredLocations : locations
+              }
+              onFilterLocations={handleFilterLocations}
             />
           }
         />
@@ -91,6 +95,10 @@ function MainPage() {
             <Beauty
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
+              location={
+                filteredLocations.length > 0 ? filteredLocations : locations
+              }
+              onFilterLocations={handleFilterLocations}
             />
           }
         />
