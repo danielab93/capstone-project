@@ -50,7 +50,6 @@ ol li {
 button {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 0.8rem;
 }
 
 `;
