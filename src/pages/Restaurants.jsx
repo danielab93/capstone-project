@@ -7,8 +7,13 @@ import Filter from "../components/Filter";
 
 import { restaurants } from "../library/data.js";
 
-function Restaurants({ onAddToFavourites, favouriteCards, onFilterLocations }) {
-  const restaurantCards = restaurants.map((restaurant) => (
+function Restaurants({
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  location,
+}) {
+  const restaurantCards = location.map((restaurant) => (
     <InformationCards
       key={restaurant.id}
       name={restaurant.name}

@@ -18,13 +18,12 @@ function MainPage() {
 
   const handleFilterLocations = (category) => {
     if (category === "") {
-      setFilteredLocations(restaurants); // alle Karten zeigen
+      setFilteredLocations(restaurants);
     } else {
       const updatedFilteredLocations = locations.filter(
         (location) => location.kategorie === category
       );
 
-      console.log(updatedFilteredLocations);
       setFilteredLocations(updatedFilteredLocations);
     }
   };
@@ -68,6 +67,9 @@ function MainPage() {
           path="/restaurants"
           element={
             <Restaurants
+              location={
+                filteredLocations.length > 0 ? filteredLocations : locations
+              }
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
               onFilterLocations={handleFilterLocations}
