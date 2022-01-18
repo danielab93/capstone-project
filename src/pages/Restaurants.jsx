@@ -3,10 +3,11 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
 import InformationCards from "../components/InformationCards";
+import Filter from "../components/Filter";
 
 import { restaurants } from "../library/data.js";
 
-function Restaurants({ onAddToFavourites, favouriteCards }) {
+function Restaurants({ onAddToFavourites, favouriteCards, onFilterLocations }) {
   const restaurantCards = restaurants.map((restaurant) => (
     <InformationCards
       key={restaurant.id}
@@ -29,7 +30,12 @@ function Restaurants({ onAddToFavourites, favouriteCards }) {
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
       <main>
-        <h2>Restaurants</h2>
+        <Filter
+          name="category"
+          value={restaurants.kategorie}
+          options={restaurants.map((restaurant) => restaurant.kategorie)}
+          onFilterLocations={onFilterLocations}
+        />
         <section>{restaurantCards}</section>
       </main>
       <FooterNavbar />

@@ -11,6 +11,20 @@ import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
 
 function MainPage() {
+  const [locations, setLocations] = useState([]); // brauche ich diesen useState?
+  const [filteredLocations, setFilteredLocations] = useState([]);
+
+  const handleFilterLocations = (category) => {
+    if (category === "") {
+      setFilteredLocations(""); // setFilteredLocations (zeige alle Karten)
+    } else {
+      const updatedFilteredLocations = locations.filter(
+        (location) => location.kategorie === kategorie
+      );
+      setFilteredLocations(updatedFilteredLocations);
+    }
+  };
+
   const localStorageFavouriteCards = loadFromLocal("favouriteCards");
   const [favouriteCards, setFavouriteCards] = useState(
     localStorageFavouriteCards ?? []
@@ -52,6 +66,7 @@ function MainPage() {
             <Restaurants
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
+              onFilterLocations={handleFilterLocations}
             />
           }
         />
