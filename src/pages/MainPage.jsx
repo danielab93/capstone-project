@@ -1,5 +1,5 @@
 import { Routes, Route, NavLink, Link } from "react-router-dom";
-import { saveToLocal, loadFromLocal } from "../Library/localStorage";
+import { saveToLocal, loadFromLocal } from "../library/localStorage";
 import { useState, useEffect } from "react";
 import MainMenu from "../components/MainMenu";
 
