@@ -8,46 +8,44 @@ function ToggleButton({ contact, email, website }) {
     setShowMore(!showMore);
   }
 
-  const contactData = contact?.map((singleContact, index) => {
+  const contactData = contact.map((singleContact, index) => {
     return (
-      <>
-        <SingleContactContainer>
-          <li key={index}>
-            <ContactTitle> Standort: </ContactTitle> {singleContact.standort}
-          </li>
-          <li>
-            <ContactTitle> Adresse: </ContactTitle>
-            {singleContact.strasse} {singleContact.hausnummer}
-            {", "}
-            {singleContact.plz} {singleContact.ort}
-          </li>
-          <li>
-            <ContactTitle>Öffnungszeiten: </ContactTitle>
-            {singleContact.zeiten}
-          </li>
+      <SingleContactContainer key={index}>
+        <li>
+          <ContactTitle> Standort: </ContactTitle> {singleContact.standort}
+        </li>
+        <li>
+          <ContactTitle> Adresse: </ContactTitle>
+          {singleContact.strasse} {singleContact.hausnummer}
+          {", "}
+          {singleContact.plz} {singleContact.ort}
+        </li>
+        <li>
+          <ContactTitle>Öffnungszeiten: </ContactTitle>
+          {singleContact.zeiten}
+        </li>
 
-          <li>
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 100 100"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M43.975 26L29.8792 9.72917C28.2542 7.85417 25.275 7.8625 23.3875 9.75417L11.7959 21.3667C8.34587 24.8208 7.35837 29.95 9.3542 34.0625C21.2776 58.7499 41.1877 78.6879 65.8584 90.6458C69.9667 92.6417 75.0917 91.6542 78.5417 88.2L90.2417 76.4792C92.1375 74.5833 92.1417 71.5875 90.25 69.9625L73.9167 55.9417C72.2084 54.475 69.5542 54.6667 67.8417 56.3833L62.1584 62.075C61.8674 62.3799 61.4844 62.581 61.0682 62.6472C60.6519 62.7134 60.2254 62.6412 59.8542 62.4417C50.5644 57.0921 42.8583 49.376 37.5209 40.0792C37.321 39.7073 37.2486 39.2801 37.3148 38.8631C37.3811 38.4462 37.5823 38.0625 37.8875 37.7708L43.5542 32.1C45.2709 30.375 45.4584 27.7083 43.975 25.9958V26Z"
-                fill=""
-                stroke=""
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+        <li>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M43.975 26L29.8792 9.72917C28.2542 7.85417 25.275 7.8625 23.3875 9.75417L11.7959 21.3667C8.34587 24.8208 7.35837 29.95 9.3542 34.0625C21.2776 58.7499 41.1877 78.6879 65.8584 90.6458C69.9667 92.6417 75.0917 91.6542 78.5417 88.2L90.2417 76.4792C92.1375 74.5833 92.1417 71.5875 90.25 69.9625L73.9167 55.9417C72.2084 54.475 69.5542 54.6667 67.8417 56.3833L62.1584 62.075C61.8674 62.3799 61.4844 62.581 61.0682 62.6472C60.6519 62.7134 60.2254 62.6412 59.8542 62.4417C50.5644 57.0921 42.8583 49.376 37.5209 40.0792C37.321 39.7073 37.2486 39.2801 37.3148 38.8631C37.3811 38.4462 37.5823 38.0625 37.8875 37.7708L43.5542 32.1C45.2709 30.375 45.4584 27.7083 43.975 25.9958V26Z"
+              fill=""
+              stroke=""
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
 
-            {singleContact.telefon}
-          </li>
-        </SingleContactContainer>
-      </>
+          {singleContact.telefon}
+        </li>
+      </SingleContactContainer>
     );
   });
 
@@ -122,7 +120,10 @@ const Button = styled.button`
   color: var(--logo-one);
   border: none;
   border-radius: 5px;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
   padding: 0.2rem;
+  width: 50%;
 `;
 
 const ContactContainer = styled.div`

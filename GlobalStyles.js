@@ -47,6 +47,11 @@ ol li {
   padding: 0;
 }
 
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
 `;
 
 export default GlobalStyle;
