@@ -1,16 +1,7 @@
 import styled from "styled-components";
+import ToggleButton from "./ToggleButton";
 
-function BasicCards({
-  name,
-  category,
-  info,
-  address,
-  hours,
-  phone,
-  email,
-  website,
-  image,
-}) {
+function BasicCards({ name, category, info, contact, email, website, image }) {
   return (
     <>
       <SingleCardContainer>
@@ -24,6 +15,7 @@ function BasicCards({
             <CardImage src={image} alt="" />
           </div>
         </InfoContainer>
+        <ToggleButton contact={contact} email={email} website={website} />
       </SingleCardContainer>
     </>
   );

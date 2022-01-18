@@ -26,6 +26,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+main {
+  margin-bottom: 6.2rem;
+}
+
 h1, h2, h3 {
   line-height: 1.2;
 }
@@ -41,6 +45,11 @@ ul li,
 ol li {
   list-style: none;
   padding: 0;
+}
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
 }
 
 `;

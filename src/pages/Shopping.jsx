@@ -12,9 +12,7 @@ function Shopping() {
       name={shop.name}
       category={shop.kategorie}
       info={shop.info}
-      address={shop.adresse}
-      hours={shop.zeiten}
-      phone={shop.telefon}
+      contact={shop.kontakt}
       email={shop.email}
       website={shop.website}
       image={shop.image}
@@ -23,18 +21,13 @@ function Shopping() {
   return (
     <>
       <Header image={shoppingheader} altText="Shopping Header" />
-      <h2>Shopping</h2>
-      <OuterCardContainer>
+      <main>
+        <h2>Shopping</h2>
         <section>{shoppingCards}</section>
-      </OuterCardContainer>
+      </main>
       <FooterNavbar />
     </>
   );
 }
 
 export default Shopping;
-
-// this styling still needs to be moved to InformationCards
-const OuterCardContainer = styled.div`
-  margin-bottom: 6.2rem;
-`;
