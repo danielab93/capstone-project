@@ -13,7 +13,7 @@ import NotFound from "../pages/NotFound";
 import { restaurants, shops, beautyspots } from "../library/data.js";
 
 function MainPage() {
-  const [locations, setLocations] = useState(restaurants, shops, beautyspots);
+  const [locations, setLocations] = useState(restaurants);
   const [filteredLocations, setFilteredLocations] = useState([]);
 
   const handleFilterLocations = (category) => {
