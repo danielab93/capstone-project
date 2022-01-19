@@ -27,6 +27,7 @@ function MainPage() {
       );
 
       setFilteredLocations(updatedFilteredLocations);
+      console.log(updatedFilteredLocations);
     }
   };
 
