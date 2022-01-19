@@ -3,7 +3,9 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import shoppingheader from "../images/Shopping.png";
 import InformationCards from "../components/InformationCards";
+import Filter from "../components/Filter";
 import { shops } from "../library/data.js";
+import { filterOptions } from "../library/filterOptions";
 
 function Shopping({
   onAddToFavourites,
@@ -32,7 +34,13 @@ function Shopping({
     <>
       <Header image={shoppingheader} altText="Shopping Header" />
       <main>
-        <h2>Shopping</h2>
+        <Filter
+          name="category"
+          value={shops.kategorie}
+          options={filterOptions(shops)}
+          onFilterLocations={onFilterLocations}
+          locations={shops}
+        />
         <section>{shoppingCards}</section>
       </main>
       <FooterNavbar />

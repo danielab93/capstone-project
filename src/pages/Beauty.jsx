@@ -5,6 +5,7 @@ import beautyheader from "../images/Beauty.png";
 import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
 import { beautyspots } from "../library/data.js";
+import { filterOptions } from "../library/filterOptions";
 
 function Beauty({
   locationsBeautyspots,
@@ -29,10 +30,6 @@ function Beauty({
       )}
     />
   ));
-
-  const filterOptions = (locations) => [
-    ...new Set(locations.map((location) => location.kategorie)),
-  ]; // DIESE FUNKTION AUSLAGERN UND DANN IN JEDER KOMPONENTE AUFRUFEN!!!
 
   return (
     <>

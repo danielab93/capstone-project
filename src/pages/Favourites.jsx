@@ -2,8 +2,10 @@ import FooterNavbar from "../components/FooterNavbar";
 import Header from "../components/Header";
 import favoritenheader from "../images/Favoriten.png";
 import InformationCards from "../components/InformationCards";
+import Filter from "../components/Filter";
+import { filterOptions } from "../library/filterOptions";
 
-function Favourites({ onAddToFavourites, favouriteCards }) {
+function Favourites({ onAddToFavourites, favouriteCards, onFilterLocations }) {
   const allFavourites = favouriteCards?.map((favouriteCard) => (
     <InformationCards
       key={favouriteCard?.id}
@@ -23,7 +25,13 @@ function Favourites({ onAddToFavourites, favouriteCards }) {
     <>
       <Header image={favoritenheader} altText="Favoriten Header" />
       <main>
-        <h2>Favoriten</h2>
+        <Filter
+          name="category"
+          value={favouriteCards.kategorie}
+          options={filterOptions(favouriteCards)}
+          onFilterLocations={onFilterLocations}
+          locations={favouriteCards}
+        />
         <section>{allFavourites}</section>
       </main>
       <FooterNavbar />

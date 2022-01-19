@@ -240,7 +240,7 @@ const shops = [
   {
     id: 10,
     name: "Bio-Wochenmarkt Eppendorf",
-    kategorie: "Lebensmittel",
+    kategorie: "Lebensmittel & Drogerie",
     info: "Produkte aus ökologischer Erzeugung sowie verantwortungsvoll produzierte Waren aus der Region.",
     kontakt: [
       {

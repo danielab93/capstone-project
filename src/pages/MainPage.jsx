@@ -84,14 +84,14 @@ function MainPage() {
           path="/shopping"
           element={
             <Shopping
-              onAddToFavourites={addToFavourites}
-              favouriteCards={favouriteCards}
               locationsShops={
                 filteredLocations.length > 0
                   ? filteredLocations
                   : locationsShops
               }
+              onAddToFavourites={addToFavourites}
               onFilterLocations={handleFilterLocations}
+              favouriteCards={favouriteCards}
             />
           }
         />
@@ -99,14 +99,14 @@ function MainPage() {
           path="/beauty"
           element={
             <Beauty
-              onAddToFavourites={addToFavourites}
-              favouriteCards={favouriteCards}
               locationsBeautyspots={
                 filteredLocations.length > 0
                   ? filteredLocations
                   : locationsBeautyspots
               }
+              onAddToFavourites={addToFavourites}
               onFilterLocations={handleFilterLocations}
+              favouriteCards={favouriteCards}
             />
           }
         />

@@ -4,8 +4,8 @@ import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
 import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
-
 import { restaurants } from "../library/data.js";
+import { filterOptions } from "../library/filterOptions";
 
 function Restaurants({
   onAddToFavourites,
@@ -38,7 +38,7 @@ function Restaurants({
         <Filter
           name="category"
           value={restaurants.kategorie}
-          options={restaurants.map((restaurant) => restaurant.kategorie)}
+          options={filterOptions(restaurants)}
           onFilterLocations={onFilterLocations}
           locations={restaurants}
         />
