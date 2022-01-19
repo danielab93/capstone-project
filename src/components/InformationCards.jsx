@@ -12,9 +12,7 @@ function InformationCards({
   image,
   onAddToFavourites,
   isFavourite,
-  restaurant,
-  shop,
-  beauty,
+  location,
 }) {
   return (
     <>
@@ -24,9 +22,7 @@ function InformationCards({
           <FavouriteButton
             onAddToFavourites={onAddToFavourites}
             isFavourite={isFavourite}
-            restaurant={restaurant}
-            shop={shop}
-            beauty={beauty}
+            location={location}
           />
         </CardHeadline>
         <InfoContainer>

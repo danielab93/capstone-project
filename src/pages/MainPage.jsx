@@ -13,12 +13,14 @@ import NotFound from "../pages/NotFound";
 import { restaurants, shops, beautyspots } from "../library/data.js";
 
 function MainPage() {
-  const [locations, setLocations] = useState(restaurants);
+  const [locationsRestaurants, setLocationsRestaurants] = useState(restaurants);
+  const [locationsShops, setLocationsShops] = useState(shops);
+  const [locationsBeautyspots, setLocationsBeautyspots] = useState(beautyspots);
   const [filteredLocations, setFilteredLocations] = useState([]);
 
-  const handleFilterLocations = (category) => {
+  const handleFilterLocations = (category, locations) => {
     if (category === "") {
-      setFilteredLocations(restaurants);
+      setFilteredLocations(locations);
     } else {
       const updatedFilteredLocations = locations.filter(
         (location) => location.kategorie === category
@@ -67,8 +69,10 @@ function MainPage() {
           path="/restaurants"
           element={
             <Restaurants
-              location={
-                filteredLocations.length > 0 ? filteredLocations : locations
+              locationsRestaurants={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : locationsRestaurants
               }
               onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
@@ -82,8 +86,10 @@ function MainPage() {
             <Shopping
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
-              location={
-                filteredLocations.length > 0 ? filteredLocations : locations
+              locationsShops={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : locationsShops
               }
               onFilterLocations={handleFilterLocations}
             />
@@ -95,8 +101,10 @@ function MainPage() {
             <Beauty
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
-              location={
-                filteredLocations.length > 0 ? filteredLocations : locations
+              locationsBeautyspots={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : locationsBeautyspots
               }
               onFilterLocations={handleFilterLocations}
             />

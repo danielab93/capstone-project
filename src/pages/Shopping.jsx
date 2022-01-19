@@ -5,8 +5,13 @@ import shoppingheader from "../images/Shopping.png";
 import InformationCards from "../components/InformationCards";
 import { shops } from "../library/data.js";
 
-function Shopping({ onAddToFavourites, favouriteCards }) {
-  const shoppingCards = shops.map((shop) => (
+function Shopping({
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  locationsShops,
+}) {
+  const shoppingCards = locationsShops.map((shop) => (
     <InformationCards
       key={shop.id}
       name={shop.name}
@@ -17,7 +22,7 @@ function Shopping({ onAddToFavourites, favouriteCards }) {
       website={shop.website}
       image={shop.image}
       onAddToFavourites={onAddToFavourites}
-      shop={shop}
+      location={shop}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === shop.id
       )}

@@ -1,8 +1,15 @@
 import styled from "styled-components";
 
-function Filter({ name, value, children, options, onFilterLocations }) {
+function Filter({
+  name,
+  value,
+  children,
+  options,
+  onFilterLocations,
+  locations,
+}) {
   const handleFilterCards = (event) => {
-    onFilterLocations(event.target.value);
+    onFilterLocations(event.target.value, locations);
   };
 
   return (

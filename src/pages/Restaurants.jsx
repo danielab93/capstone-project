@@ -11,9 +11,9 @@ function Restaurants({
   onAddToFavourites,
   favouriteCards,
   onFilterLocations,
-  location,
+  locationsRestaurants,
 }) {
-  const restaurantCards = location.map((restaurant) => (
+  const restaurantCards = locationsRestaurants.map((restaurant) => (
     <InformationCards
       key={restaurant.id}
       name={restaurant.name}
@@ -24,7 +24,7 @@ function Restaurants({
       website={restaurant.website}
       image={restaurant.image}
       onAddToFavourites={onAddToFavourites}
-      restaurant={restaurant}
+      location={restaurant}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === restaurant.id
       )}
@@ -40,6 +40,7 @@ function Restaurants({
           value={restaurants.kategorie}
           options={restaurants.map((restaurant) => restaurant.kategorie)}
           onFilterLocations={onFilterLocations}
+          locations={restaurants}
         />
         <section>{restaurantCards}</section>
       </main>
