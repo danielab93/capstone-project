@@ -1,4 +1,6 @@
 import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { saveToLocal, loadFromLocal } from "../library/localStorage";
+import { useState, useEffect } from "react";
 import MainMenu from "../components/MainMenu";
 
 import Restaurants from "../pages/Restaurants";
@@ -9,6 +11,30 @@ import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
 
 function MainPage() {
+  const localStorageFavouriteCards = loadFromLocal("favouriteCards");
+  const [favouriteCards, setFavouriteCards] = useState(
+    localStorageFavouriteCards ?? []
+  );
+
+  useEffect(() => {
+    saveToLocal("favouriteCards", favouriteCards);
+  }, [favouriteCards]);
+
+  function addToFavourites(favouriteCardToAdd) {
+    if (
+      favouriteCards.some(
+        (everyFavouriteCard) => everyFavouriteCard?.id === favouriteCardToAdd.id
+      )
+    ) {
+      const updatedFavouriteCards = favouriteCards.filter(
+        (everyFavouriteCard) => everyFavouriteCard?.id !== favouriteCardToAdd.id
+      );
+      setFavouriteCards(updatedFavouriteCards);
+    } else {
+      setFavouriteCards([...favouriteCards, favouriteCardToAdd]);
+    }
+  }
+
   return (
     <>
       <Routes>
@@ -20,10 +46,42 @@ function MainPage() {
             </>
           }
         />
-        <Route path="/restaurants" element={<Restaurants />} />
-        <Route path="/shopping" element={<Shopping />} />
-        <Route path="/beauty" element={<Beauty />} />
-        <Route path="/favoriten" element={<Favourites />} />
+        <Route
+          path="/restaurants"
+          element={
+            <Restaurants
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
+        />
+        <Route
+          path="/shopping"
+          element={
+            <Shopping
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
+        />
+        <Route
+          path="/beauty"
+          element={
+            <Beauty
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
+        />
+        <Route
+          path="/favoriten"
+          element={
+            <Favourites
+              onAddToFavourites={addToFavourites}
+              favouriteCards={favouriteCards}
+            />
+          }
+        />
         <Route path="/co2-rechner" element={<Calculator />} />
 
         <Route path="/*" element={<NotFound />} />

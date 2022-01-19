@@ -148,7 +148,7 @@ const restaurants = [
 
 const shops = [
   {
-    id: 1,
+    id: 6,
     name: "Bio.lose",
     kategorie: "Lebensmittel & Drogerie",
     info: "Bio-Lebensmittel und Artikel ohne Einwegverpack- ungen. Hier wird nachhaltiges Einkaufen Wirklichkeit.",
@@ -168,7 +168,7 @@ const shops = [
     image: biolose,
   },
   {
-    id: 2,
+    id: 7,
     name: "Stückgut - Unverpackt Einkaufen",
     kategorie: "Lebensmittel & Drogerie",
     info: "Lebensmittel sowie Produkte für Haushalt und Körperhygiene - unverpackt und umweltverträglich.",
@@ -197,7 +197,7 @@ const shops = [
     image: stueckgut,
   },
   {
-    id: 3,
+    id: 8,
     name: "glore",
     kategorie: "Mode",
     info: "Wir haben die größte Auswahl an organic & fairtrade Jeans Hamburgs. Gemeinsam finden wir deinen neuen Lieblings-Fit.",
@@ -218,7 +218,7 @@ const shops = [
   },
 
   {
-    id: 4,
+    id: 9,
     name: "Vunderland",
     kategorie: "Mode",
     info: "Vegane Kleidung, Schuhe, Taschen, Schmuck & Accessoires, Kunst und Kosmetik. ",
@@ -238,7 +238,7 @@ const shops = [
     image: vunderland,
   },
   {
-    id: 5,
+    id: 10,
     name: "Bio-Wochenmarkt Eppendorf",
     kategorie: "Lebensmittel",
     info: "Produkte aus ökologischer Erzeugung sowie verantwortungsvoll produzierte Waren aus der Region.",
@@ -263,7 +263,7 @@ const shops = [
 
 const beautyspots = [
   {
-    id: 1,
+    id: 11,
     name: "Schnittstube Verde",
     kategorie: "Friseur",
     info: "Wir arbeiten mit naturnaher Haarkosmetik, die keine Wünsche offen lässt.",
@@ -283,7 +283,7 @@ const beautyspots = [
     image: schnittstubeverde,
   },
   {
-    id: 2,
+    id: 12,
     name: "Stine Vega",
     kategorie: "Friseur",
     info: "Stine Vega überzeugt mit ihrer professionellen Arbeit und verwendet zudem hochwertige vegane Produkte.",
@@ -303,7 +303,7 @@ const beautyspots = [
     image: stinevega,
   },
   {
-    id: 3,
+    id: 13,
     name: "Jeannie Nagelstudio",
     kategorie: "Kosmetik",
     info: "Healthy, Vegan und Cruelty-Free! Lass dich bei uns verwöhnen.",
@@ -324,7 +324,7 @@ const beautyspots = [
   },
 
   {
-    id: 4,
+    id: 14,
     name: "NATURKOSMETIKUM - Heike Vossberg",
     kategorie: "Kosmetik",
     info: "Jede Haut ist empfindsam und einzigartig. Und genau so behandeln wir sie.",
@@ -344,7 +344,7 @@ const beautyspots = [
     image: heikevossberg,
   },
   {
-    id: 5,
+    id: 15,
     name: "Mimulus Naturkosmetik",
     kategorie: "Kosmetik",
     info: "MIMULUS bietet ein breites Sortiment von Naturkosmetik aus aller Welt und überzeugt mit kompetenter Beratung.",

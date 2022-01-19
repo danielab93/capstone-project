@@ -9,5 +9,4 @@ function loadFromLocal(key) {
   }
 }
 
-// wenn 2 Funktionen exportiert werden sollen:
 export { saveToLocal, loadFromLocal };
