@@ -4,6 +4,7 @@ import favoritenheader from "../images/Favoriten.png";
 import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
 import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
 function Favourites({ onAddToFavourites, favouriteCards, onFilterLocations }) {
   const allFavourites = favouriteCards?.map((favouriteCard) => (

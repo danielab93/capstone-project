@@ -120,8 +120,10 @@ function MainPage() {
           path="/favoriten"
           element={
             <Favourites
+              onResetfilter={resetfilter}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
+              onFilterLocations={handleFilterLocations}
             />
           }
         />
