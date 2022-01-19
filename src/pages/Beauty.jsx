@@ -6,13 +6,19 @@ import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
 import { beautyspots } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
 function Beauty({
   locationsBeautyspots,
   onAddToFavourites,
   favouriteCards,
   onFilterLocations,
+  onResetfilter,
 }) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+
   const beautyCards = locationsBeautyspots.map((beauty) => (
     <InformationCards
       key={beauty.id}

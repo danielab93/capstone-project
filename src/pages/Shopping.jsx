@@ -6,13 +6,19 @@ import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
 import { shops } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
 function Shopping({
   onAddToFavourites,
   favouriteCards,
   onFilterLocations,
   locationsShops,
+  onResetfilter,
 }) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+
   const shoppingCards = locationsShops.map((shop) => (
     <InformationCards
       key={shop.id}

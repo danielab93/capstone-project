@@ -18,6 +18,8 @@ function MainPage() {
   const [locationsBeautyspots, setLocationsBeautyspots] = useState(beautyspots);
   const [filteredLocations, setFilteredLocations] = useState([]);
 
+  const resetfilter = () => setFilteredLocations([]);
+
   const handleFilterLocations = (category, locations) => {
     if (category === "") {
       setFilteredLocations(locations);
@@ -70,6 +72,7 @@ function MainPage() {
           path="/restaurants"
           element={
             <Restaurants
+              onResetfilter={resetfilter}
               locationsRestaurants={
                 filteredLocations.length > 0
                   ? filteredLocations
@@ -85,6 +88,7 @@ function MainPage() {
           path="/shopping"
           element={
             <Shopping
+              onResetfilter={resetfilter}
               locationsShops={
                 filteredLocations.length > 0
                   ? filteredLocations
@@ -100,6 +104,7 @@ function MainPage() {
           path="/beauty"
           element={
             <Beauty
+              onResetfilter={resetfilter}
               locationsBeautyspots={
                 filteredLocations.length > 0
                   ? filteredLocations

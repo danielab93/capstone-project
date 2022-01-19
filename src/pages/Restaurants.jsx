@@ -6,13 +6,19 @@ import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
 import { restaurants } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
 function Restaurants({
   onAddToFavourites,
   favouriteCards,
   onFilterLocations,
   locationsRestaurants,
+  onResetfilter,
 }) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+
   const restaurantCards = locationsRestaurants.map((restaurant) => (
     <InformationCards
       key={restaurant.id}
