@@ -47,6 +47,10 @@ ol li {
   padding: 0;
 }
 
+p {
+  margin: 0;
+}
+
 button {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
