@@ -121,14 +121,10 @@ function MainPage() {
           element={
             <Favourites
               onResetfilter={resetfilter}
-              /* locations={
-                filteredLocations.length > 0
-                  ? filteredLocations
-                  : favouriteCards
-              } */
               onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
+              filteredLocations={filteredLocations}
             />
           }
         />

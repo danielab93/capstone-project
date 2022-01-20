@@ -10,13 +10,16 @@ function Favourites({
   onAddToFavourites,
   favouriteCards,
   onFilterLocations,
+  filteredLocations,
   /* onResetfilter, */
 }) {
   /* useEffect(() => {
     onResetfilter();
   }, []); */
+  const filteredFavourites =
+    filteredLocations.length > 0 ? filteredLocations : favouriteCards;
 
-  const allFavourites = favouriteCards?.map((favouriteCard) => (
+  const allFavourites = filteredFavourites?.map((favouriteCard) => (
     <InformationCards
       key={favouriteCard?.id}
       name={favouriteCard?.name}
