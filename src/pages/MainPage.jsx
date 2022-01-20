@@ -27,9 +27,9 @@ function MainPage() {
       const updatedFilteredLocations = locations.filter(
         (location) => location.kategorie === category
       );
-
       setFilteredLocations(updatedFilteredLocations);
       console.log(updatedFilteredLocations);
+      console.log(filteredLocations);
     }
   };
 
@@ -94,8 +94,8 @@ function MainPage() {
                   ? filteredLocations
                   : locationsShops
               }
-              onAddToFavourites={addToFavourites}
               onFilterLocations={handleFilterLocations}
+              onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
             />
           }
@@ -110,8 +110,8 @@ function MainPage() {
                   ? filteredLocations
                   : locationsBeautyspots
               }
-              onAddToFavourites={addToFavourites}
               onFilterLocations={handleFilterLocations}
+              onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
             />
           }
@@ -121,9 +121,14 @@ function MainPage() {
           element={
             <Favourites
               onResetfilter={resetfilter}
+              /* locations={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : favouriteCards
+              } */
+              onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
-              onFilterLocations={handleFilterLocations}
             />
           }
         />

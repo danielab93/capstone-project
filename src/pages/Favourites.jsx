@@ -6,7 +6,16 @@ import Filter from "../components/Filter";
 import { filterOptions } from "../library/filterOptions";
 import { useEffect } from "react";
 
-function Favourites({ onAddToFavourites, favouriteCards, onFilterLocations }) {
+function Favourites({
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  /* onResetfilter, */
+}) {
+  /* useEffect(() => {
+    onResetfilter();
+  }, []); */
+
   const allFavourites = favouriteCards?.map((favouriteCard) => (
     <InformationCards
       key={favouriteCard?.id}
