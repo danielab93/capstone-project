@@ -11,11 +11,11 @@ function Favourites({
   favouriteCards,
   onFilterLocations,
   filteredLocations,
-  /* onResetfilter, */
+  onResetfilter,
 }) {
-  /* useEffect(() => {
+  useEffect(() => {
     onResetfilter();
-  }, []); */
+  }, []);
   const filteredFavourites =
     filteredLocations.length > 0 ? filteredLocations : favouriteCards;
 
