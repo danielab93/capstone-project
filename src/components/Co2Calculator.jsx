@@ -8,7 +8,8 @@ function Co2Calculator({}) {
   const [carValue, setCarValue] = useState(0);
   const [co2Car, setCo2Car] = useState(0);
 
-  const [co2Budget, setCo2Budget] = useState(1500);
+  const [co2BudgetSpent, setCo2BudgetSpent] = useState(0);
+  const [co2BudgetLeft, setCo2BudgetLeft] = useState(1500);
 
   const handleInputChange = (value) => {
     setInputCar(value);
@@ -18,7 +19,9 @@ function Co2Calculator({}) {
     event.preventDefault();
     if (inputCar > 0) {
       setCarValue(carValue + inputCar);
-      setCo2Car((carValue + inputCar) * 119);
+      setCo2Car((carValue + inputCar) * 0.119);
+      setCo2BudgetSpent();
+      setCo2BudgetLeft();
       setInputCar(0);
     } else {
       alert("Bitte prüfe deine Eingabe");
@@ -61,37 +64,39 @@ function Co2Calculator({}) {
       </section>
       <section>
         <Table>
-          <tr>
-            <TableHeader>Gesamt Kilometer</TableHeader>
-            <TableHeader>Co2-Ausstoß</TableHeader>
-          </tr>
-          <tr>
-            <td>{carValue} Km Auto gefahren</td>
-            <TableDataRight>{co2Car} Kg Co2</TableDataRight>
-          </tr>
-          <tr>
-            <td>... Km Bahn gefahren</td>
-            <TableDataRight>... Kg Co2</TableDataRight>
-          </tr>
-          <tr>
-            <td>... Km geflogen</td>
-            <TableDataRight>... Kg Co2</TableDataRight>
-          </tr>
-          <tr>
-            <TableHeader>Co2 Budget</TableHeader>
-          </tr>
-          <tr>
-            <td>Dein Jahresbudget: </td>
-            <TableDataRight>1.500 Kg Co2</TableDataRight>
-          </tr>
-          <tr>
-            <td>Bereits verbraucht: </td>
-            <TableDataRight>... Kg Co2</TableDataRight>
-          </tr>
-          <tr>
-            <td>Noch übrig: </td>
-            <TableDataRight>... Kg Co2</TableDataRight>
-          </tr>
+          <tbody>
+            <tr>
+              <TableHeader>Gesamt Kilometer</TableHeader>
+              <TableHeader>Co2-Ausstoß</TableHeader>
+            </tr>
+            <tr>
+              <td>{carValue} Km Auto</td>
+              <TableDataRight>{co2Car} Kg Co2</TableDataRight>
+            </tr>
+            <tr>
+              <td>... Km Bahn</td>
+              <TableDataRight>... Kg Co2</TableDataRight>
+            </tr>
+            <tr>
+              <td>... Km Flug</td>
+              <TableDataRight>... Kg Co2</TableDataRight>
+            </tr>
+            <tr>
+              <TableHeader>Co2 Budget</TableHeader>
+            </tr>
+            <tr>
+              <td>Dein Jahresbudget: </td>
+              <TableDataRight>1500 Kg Co2</TableDataRight>
+            </tr>
+            <tr>
+              <td>Bereits verbraucht: </td>
+              <TableDataRight>{co2BudgetSpent} Kg Co2</TableDataRight>
+            </tr>
+            <tr>
+              <td>Noch übrig: </td>
+              <TableDataRight>... Kg Co2</TableDataRight>
+            </tr>
+          </tbody>
         </Table>
       </section>
       <button>Alles zurücksetzen</button>
