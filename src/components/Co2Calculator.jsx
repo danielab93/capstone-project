@@ -4,25 +4,60 @@ import NumberInput from "./NumberInput";
 /* import isProductValid from "../library/validation"; */
 
 function Co2Calculator({}) {
-  const [inputCar, setInputCar] = useState(0);
+  const [inputCar, setInputCar] = useState();
   const [carValue, setCarValue] = useState(0);
   const [co2Car, setCo2Car] = useState(0);
+
+  const [inputTrain, setInputTrain] = useState();
+  const [trainValue, setTrainValue] = useState(0);
+  const [co2Train, setCo2Train] = useState(0);
+
+  const [inputFlight, setInputFlight] = useState();
+  const [flightValue, setFlightValue] = useState(0);
+  const [co2Flight, setCo2Flight] = useState(0);
 
   const [co2BudgetSpent, setCo2BudgetSpent] = useState(0);
   const [co2BudgetLeft, setCo2BudgetLeft] = useState(1500);
 
-  const handleInputChange = (value) => {
-    setInputCar(value);
+  const handleInputChange = (value1, value2, value3) => {
+    setInputCar(value1);
+    setInputTrain(value2);
+    setInputFlight(value3);
   };
+
+  /*  const handleInputChange = (event) => {
+    const { inputCar, value } = event.target;
+    setInputCar({
+      [inputCar]: value,
+    });
+  }; */
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (inputCar > 0) {
       setCarValue(carValue + inputCar);
-      setCo2Car((carValue + inputCar) * 0.119);
-      setCo2BudgetSpent();
-      setCo2BudgetLeft();
-      setInputCar(0);
+      const co2Car = (carValue + inputCar) * 0.119;
+      setCo2Car(co2Car.toFixed(2));
+      setCo2BudgetSpent(1500 - co2Car.toFixed(2));
+      const co2BudgetSpentCar = 1500 - co2Car.toFixed(2);
+      setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentCar);
+      setInputCar();
+    } else if (inputTrain > 0) {
+      setTrainValue(trainValue + inputTrain);
+      const co2Train = (trainValue + inputTrain) * 0.32;
+      setCo2Train(co2Train.toFixed(2));
+      setCo2BudgetSpent(1500 - co2Train.toFixed(2));
+      const co2BudgetSpentTrain = 1500 - co2Train.toFixed(2);
+      setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentTrain);
+      setInputTrain();
+    } else if (inputFlight > 0) {
+      setFlightValue(flightValue + inputFlight);
+      const co2Flight = (flightValue + inputFlight) * 0.38;
+      setCo2Flight(co2Flight.toFixed(2));
+      setCo2BudgetSpent(1500 - co2Flight.toFixed(2));
+      const co2BudgetSpentFlight = 1500 - co2Flight.toFixed(2);
+      setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentFlight);
+      setInputFlight();
     } else {
       alert("Bitte prüfe deine Eingabe");
     }
@@ -33,8 +68,8 @@ function Co2Calculator({}) {
       <section>
         Ich bin <br />
         <NumberInput
-          name="km-car"
-          placeholder="0"
+          name="inputCar"
+          /* placeholder="0" */
           value={inputCar}
           onNumberInputChange={handleInputChange}
         >
@@ -42,19 +77,19 @@ function Co2Calculator({}) {
         </NumberInput>
         Km Auto gefahren
         <NumberInput
-          name="km-train"
-          placeholder="0"
-          /* value={product.price} */
-          /* onNumberInputChange={handleInputChange} */
+          name="inputTrain"
+          /* placeholder="0" */
+          value={inputTrain}
+          onNumberInputChange={handleInputChange}
         >
           {" "}
         </NumberInput>
         Km Bahn gefahren
         <NumberInput
-          name="km-airplane"
+          name="inputFlight"
           placeholder="0"
-          /* value={product.price} */
-          /* onNumberInputChange={handleInputChange} */
+          value={inputFlight}
+          onNumberInputChange={handleInputChange}
         >
           {" "}
         </NumberInput>
@@ -74,19 +109,19 @@ function Co2Calculator({}) {
               <TableDataRight>{co2Car} Kg Co2</TableDataRight>
             </tr>
             <tr>
-              <td>... Km Bahn</td>
-              <TableDataRight>... Kg Co2</TableDataRight>
+              <td>{trainValue} Km Bahn</td>
+              <TableDataRight>{co2Train} Kg Co2</TableDataRight>
             </tr>
             <tr>
-              <td>... Km Flug</td>
-              <TableDataRight>... Kg Co2</TableDataRight>
+              <td>{flightValue} Km Flug</td>
+              <TableDataRight>{co2Flight} Kg Co2</TableDataRight>
             </tr>
             <tr>
               <TableHeader>Co2 Budget</TableHeader>
             </tr>
             <tr>
               <td>Dein Jahresbudget: </td>
-              <TableDataRight>1500 Kg Co2</TableDataRight>
+              <TableDataRight>1.500 Kg Co2</TableDataRight>
             </tr>
             <tr>
               <td>Bereits verbraucht: </td>
@@ -94,12 +129,20 @@ function Co2Calculator({}) {
             </tr>
             <tr>
               <td>Noch übrig: </td>
-              <TableDataRight>... Kg Co2</TableDataRight>
+              <TableDataRight>{co2BudgetLeft} Kg Co2</TableDataRight>
             </tr>
           </tbody>
         </Table>
       </section>
-      <button>Alles zurücksetzen</button>
+      <button
+      /*  type="reset"
+        onClick={() => {
+          setProduct(initialProduct);
+          setHasFormErrors(false);
+        }} */
+      >
+        Alles zurücksetzen
+      </button>
     </CalculatorContainer>
   );
 }

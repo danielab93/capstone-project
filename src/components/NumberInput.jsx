@@ -19,7 +19,7 @@ function NumberInput({
         type="number"
         name={name}
         value={value}
-        placeholder={placeholder}
+        /* placeholder={placeholder} */
         onChange={handleChange}
       />
     </>
