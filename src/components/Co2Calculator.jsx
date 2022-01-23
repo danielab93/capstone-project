@@ -3,56 +3,59 @@ import { useEffect, useState } from "react";
 import NumberInput from "./NumberInput";
 /* import isProductValid from "../library/validation"; */
 
-function Co2Calculator({}) {
-  const [inputCar, setInputCar] = useState();
+function Co2Calculator() {
+  /* const [inputCar, setInputCar] = useState(0); */
   const [carValue, setCarValue] = useState(0);
   const [co2Car, setCo2Car] = useState(0);
 
-  const [inputTrain, setInputTrain] = useState();
+  /* const [inputTrain, setInputTrain] = useState(0); */
   const [trainValue, setTrainValue] = useState(0);
   const [co2Train, setCo2Train] = useState(0);
 
-  const [inputFlight, setInputFlight] = useState();
+  /* const [inputFlight, setInputFlight] = useState(0); */
   const [flightValue, setFlightValue] = useState(0);
   const [co2Flight, setCo2Flight] = useState(0);
 
   const [co2BudgetSpent, setCo2BudgetSpent] = useState(0);
   const [co2BudgetLeft, setCo2BudgetLeft] = useState(1500);
-
-  const handleInputChange = (value1, value2, value3) => {
-    setInputCar(value1);
-    setInputTrain(value2);
-    setInputFlight(value3);
+  // -------------------------------------------------------------------
+  const initialValues = {
+    inputCar: 0,
+    inputTrain: 0,
+    inputFlight: 0,
   };
 
-  /*  const handleInputChange = (event) => {
-    const { inputCar, value } = event.target;
-    setInputCar({
-      [inputCar]: value,
+  const [values, setValues] = useState(initialValues);
+  // -------------------------------------------------------------------
+
+  const handleInputChange = (name, value) => {
+    setValues({
+      ...values,
+      [name]: value,
     });
-  }; */
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (inputCar > 0) {
-      setCarValue(carValue + inputCar);
-      const co2Car = (carValue + inputCar) * 0.119;
+    if (values.inputCar > 0) {
+      setCarValue(carValue + values.inputCar);
+      const co2Car = (carValue + values.inputCar) * 0.119;
       setCo2Car(co2Car.toFixed(2));
       setCo2BudgetSpent(1500 - co2Car.toFixed(2));
       const co2BudgetSpentCar = 1500 - co2Car.toFixed(2);
       setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentCar);
-      setInputCar();
-    } else if (inputTrain > 0) {
-      setTrainValue(trainValue + inputTrain);
-      const co2Train = (trainValue + inputTrain) * 0.32;
+      /* setInputCar(); */
+    } else if (values.inputTrain > 0) {
+      setTrainValue(trainValue + values.inputTrain);
+      const co2Train = (trainValue + values.inputTrain) * 0.32;
       setCo2Train(co2Train.toFixed(2));
       setCo2BudgetSpent(1500 - co2Train.toFixed(2));
       const co2BudgetSpentTrain = 1500 - co2Train.toFixed(2);
       setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentTrain);
       setInputTrain();
-    } else if (inputFlight > 0) {
-      setFlightValue(flightValue + inputFlight);
-      const co2Flight = (flightValue + inputFlight) * 0.38;
+    } else if (values.inputFlight > 0) {
+      setFlightValue(flightValue + values.inputFlight);
+      const co2Flight = (flightValue + values.inputFlight) * 0.38;
       setCo2Flight(co2Flight.toFixed(2));
       setCo2BudgetSpent(1500 - co2Flight.toFixed(2));
       const co2BudgetSpentFlight = 1500 - co2Flight.toFixed(2);
@@ -63,40 +66,44 @@ function Co2Calculator({}) {
     }
   };
 
+  console.log(values.inputCar);
+
   return (
     <CalculatorContainer>
-      <section>
-        Ich bin <br />
-        <NumberInput
-          name="inputCar"
-          /* placeholder="0" */
-          value={inputCar}
-          onNumberInputChange={handleInputChange}
-        >
-          {" "}
-        </NumberInput>
-        Km Auto gefahren
-        <NumberInput
-          name="inputTrain"
-          /* placeholder="0" */
-          value={inputTrain}
-          onNumberInputChange={handleInputChange}
-        >
-          {" "}
-        </NumberInput>
-        Km Bahn gefahren
-        <NumberInput
-          name="inputFlight"
-          placeholder="0"
-          value={inputFlight}
-          onNumberInputChange={handleInputChange}
-        >
-          {" "}
-        </NumberInput>
-        Km geflogen
-        <br />
-        <button onClick={handleSubmit}>Hinzufügen</button>
-      </section>
+      <form onSubmit={handleSubmit}>
+        <section>
+          Ich bin <br />
+          <NumberInput
+            name="inputCar"
+            /* placeholder="0" */
+            value={values.inputCar}
+            onNumberInputChange={handleInputChange}
+          >
+            {" "}
+          </NumberInput>
+          Km Auto gefahren
+          <NumberInput
+            name="inputTrain"
+            /* placeholder="0" */
+            value={values.inputTrain}
+            onNumberInputChange={handleInputChange}
+          >
+            {" "}
+          </NumberInput>
+          Km Bahn gefahren
+          <NumberInput
+            name="inputFlight"
+            placeholder="0"
+            value={values.inputFlight}
+            onNumberInputChange={handleInputChange}
+          >
+            {" "}
+          </NumberInput>
+          Km geflogen
+          <br />
+          <button type="submit">Hinzufügen</button>
+        </section>
+      </form>
       <section>
         <Table>
           <tbody>

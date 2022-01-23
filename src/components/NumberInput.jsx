@@ -9,7 +9,7 @@ function NumberInput({
 }) {
   function handleChange(event) {
     const parsedValue = parseFloat(event.target.value);
-    onNumberInputChange(parsedValue);
+    onNumberInputChange(event.target.name, parsedValue);
   }
 
   return (
