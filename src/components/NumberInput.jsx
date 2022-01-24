@@ -15,13 +15,7 @@ function NumberInput({
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <Input
-        type="number"
-        name={name}
-        value={value}
-        /* placeholder={placeholder} */
-        onChange={handleChange}
-      />
+      <Input type="number" name={name} value={value} onChange={handleChange} />
     </>
   );
 }

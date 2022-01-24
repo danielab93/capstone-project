@@ -4,20 +4,18 @@ import NumberInput from "./NumberInput";
 /* import isProductValid from "../library/validation"; */
 
 function Co2Calculator() {
-  /* const [inputCar, setInputCar] = useState(0); */
-  const [carValue, setCarValue] = useState(0);
+  const [carKm, setCarKm] = useState(0);
   const [co2Car, setCo2Car] = useState(0);
 
-  /* const [inputTrain, setInputTrain] = useState(0); */
-  const [trainValue, setTrainValue] = useState(0);
+  const [trainKm, setTrainKm] = useState(0);
   const [co2Train, setCo2Train] = useState(0);
 
-  /* const [inputFlight, setInputFlight] = useState(0); */
-  const [flightValue, setFlightValue] = useState(0);
+  const [flightKm, setFlightKm] = useState(0);
   const [co2Flight, setCo2Flight] = useState(0);
 
   const [co2BudgetSpent, setCo2BudgetSpent] = useState(0);
   const [co2BudgetLeft, setCo2BudgetLeft] = useState(1500);
+
   // -------------------------------------------------------------------
   const initialValues = {
     inputCar: 0,
@@ -38,35 +36,42 @@ function Co2Calculator() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (values.inputCar > 0) {
-      setCarValue(carValue + values.inputCar);
-      const co2Car = (carValue + values.inputCar) * 0.119;
-      setCo2Car(co2Car.toFixed(2));
-      setCo2BudgetSpent(1500 - co2Car.toFixed(2));
-      const co2BudgetSpentCar = 1500 - co2Car.toFixed(2);
-      setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentCar);
-      /* setInputCar(); */
+      setCarKm(carKm + values.inputCar);
+      const co2Car = (carKm + values.inputCar) * 0.119;
+      setCo2Car(Math.round(co2Car * 100) / 100);
+      setCo2BudgetSpent(
+        Math.round((co2BudgetSpent + values.inputCar * 0.119) * 100) / 100
+      );
+      setCo2BudgetLeft(
+        Math.round((co2BudgetLeft - values.inputCar * 0.119) * 100) / 100
+      );
+      setValues(initialValues);
     } else if (values.inputTrain > 0) {
-      setTrainValue(trainValue + values.inputTrain);
-      const co2Train = (trainValue + values.inputTrain) * 0.32;
-      setCo2Train(co2Train.toFixed(2));
-      setCo2BudgetSpent(1500 - co2Train.toFixed(2));
-      const co2BudgetSpentTrain = 1500 - co2Train.toFixed(2);
-      setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentTrain);
-      setInputTrain();
+      setTrainKm(trainKm + values.inputTrain);
+      const co2Train = (trainKm + values.inputTrain) * 0.032;
+      setCo2Train(Math.round(co2Train * 100) / 100);
+      setCo2BudgetSpent(
+        Math.round((co2BudgetSpent + values.inputTrain * 0.032) * 100) / 100
+      );
+      setCo2BudgetLeft(
+        Math.round((co2BudgetLeft - values.inputTrain * 0.032) * 100) / 100
+      );
+      setValues(initialValues);
     } else if (values.inputFlight > 0) {
-      setFlightValue(flightValue + values.inputFlight);
-      const co2Flight = (flightValue + values.inputFlight) * 0.38;
-      setCo2Flight(co2Flight.toFixed(2));
-      setCo2BudgetSpent(1500 - co2Flight.toFixed(2));
-      const co2BudgetSpentFlight = 1500 - co2Flight.toFixed(2);
-      setCo2BudgetLeft(co2BudgetLeft - co2BudgetSpentFlight);
-      setInputFlight();
+      setFlightKm(flightKm + values.inputFlight);
+      const co2Flight = (flightKm + values.inputFlight) * 0.38;
+      setCo2Flight(Math.round(co2Flight * 100) / 100);
+      setCo2BudgetSpent(
+        Math.round((co2BudgetSpent + values.inputFlight * 0.38) * 100) / 100
+      );
+      setCo2BudgetLeft(
+        Math.round((co2BudgetLeft - values.inputFlight * 0.38) * 100) / 100
+      );
+      setValues(initialValues);
     } else {
       alert("Bitte prüfe deine Eingabe");
     }
   };
-
-  console.log(values.inputCar);
 
   return (
     <CalculatorContainer>
@@ -75,7 +80,6 @@ function Co2Calculator() {
           Ich bin <br />
           <NumberInput
             name="inputCar"
-            /* placeholder="0" */
             value={values.inputCar}
             onNumberInputChange={handleInputChange}
           >
@@ -84,7 +88,6 @@ function Co2Calculator() {
           Km Auto gefahren
           <NumberInput
             name="inputTrain"
-            /* placeholder="0" */
             value={values.inputTrain}
             onNumberInputChange={handleInputChange}
           >
@@ -93,7 +96,6 @@ function Co2Calculator() {
           Km Bahn gefahren
           <NumberInput
             name="inputFlight"
-            placeholder="0"
             value={values.inputFlight}
             onNumberInputChange={handleInputChange}
           >
@@ -112,15 +114,15 @@ function Co2Calculator() {
               <TableHeader>Co2-Ausstoß</TableHeader>
             </tr>
             <tr>
-              <td>{carValue} Km Auto</td>
+              <td>{carKm} Km Auto</td>
               <TableDataRight>{co2Car} Kg Co2</TableDataRight>
             </tr>
             <tr>
-              <td>{trainValue} Km Bahn</td>
+              <td>{trainKm} Km Bahn</td>
               <TableDataRight>{co2Train} Kg Co2</TableDataRight>
             </tr>
             <tr>
-              <td>{flightValue} Km Flug</td>
+              <td>{flightKm} Km Flug</td>
               <TableDataRight>{co2Flight} Kg Co2</TableDataRight>
             </tr>
             <tr>
@@ -128,7 +130,7 @@ function Co2Calculator() {
             </tr>
             <tr>
               <td>Dein Jahresbudget: </td>
-              <TableDataRight>1.500 Kg Co2</TableDataRight>
+              <TableDataRight>1500 Kg Co2</TableDataRight>
             </tr>
             <tr>
               <td>Bereits verbraucht: </td>
