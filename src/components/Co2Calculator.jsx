@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useEffect, useState } from "react";
+import { saveToLocal, loadFromLocal } from "../library/localStorage";
 import NumberInput from "./NumberInput";
 /* import isProductValid from "../library/validation"; */
 
@@ -16,7 +17,6 @@ function Co2Calculator() {
   const [co2BudgetSpent, setCo2BudgetSpent] = useState(0);
   const [co2BudgetLeft, setCo2BudgetLeft] = useState(1500);
 
-  // -------------------------------------------------------------------
   const initialValues = {
     inputCar: 0,
     inputTrain: 0,
@@ -24,7 +24,7 @@ function Co2Calculator() {
   };
 
   const [values, setValues] = useState(initialValues);
-  // -------------------------------------------------------------------
+  const [hasFormErrors, setHasFormErrors] = useState(false);
 
   const handleInputChange = (name, value) => {
     setValues({
@@ -33,10 +33,22 @@ function Co2Calculator() {
     });
   };
 
+  // LOCAL STORAGE
+  const localStorageCo2Calculation = loadFromLocal("co2calculation");
+  const [co2Calculation, setCo2Calculation] = useState(
+    localStorageCo2Calculation ?? []
+  );
+
+  useEffect(() => {
+    saveToLocal("co2calculation", co2Calculation);
+  }, [co2Calculation]);
+  // LOCAL STORAGE
+
   const handleSubmit = (event) => {
     event.preventDefault();
     if (values.inputCar > 0) {
-      setCarKm(carKm + values.inputCar);
+      const totalCarKm = carKm + values.inputCar;
+      setCarKm(totalCarKm); // Test für localstorage
       const co2Car = (carKm + values.inputCar) * 0.119;
       setCo2Car(Math.round(co2Car * 100) / 100);
       setCo2BudgetSpent(
@@ -46,6 +58,7 @@ function Co2Calculator() {
         Math.round((co2BudgetLeft - values.inputCar * 0.119) * 100) / 100
       );
       setValues(initialValues);
+      setHasFormErrors(false);
     } else if (values.inputTrain > 0) {
       setTrainKm(trainKm + values.inputTrain);
       const co2Train = (trainKm + values.inputTrain) * 0.032;
@@ -57,6 +70,7 @@ function Co2Calculator() {
         Math.round((co2BudgetLeft - values.inputTrain * 0.032) * 100) / 100
       );
       setValues(initialValues);
+      setHasFormErrors(false);
     } else if (values.inputFlight > 0) {
       setFlightKm(flightKm + values.inputFlight);
       const co2Flight = (flightKm + values.inputFlight) * 0.38;
@@ -68,15 +82,17 @@ function Co2Calculator() {
         Math.round((co2BudgetLeft - values.inputFlight * 0.38) * 100) / 100
       );
       setValues(initialValues);
+      setHasFormErrors(false);
     } else {
-      alert("Bitte prüfe deine Eingabe");
+      setHasFormErrors(true);
     }
   };
 
   return (
     <CalculatorContainer>
+      {hasFormErrors && <ErrorMessage>Bitte prüfe Deine Eingabe!</ErrorMessage>}
       <form onSubmit={handleSubmit}>
-        <section>
+        <InputSection>
           Ich bin <br />
           <NumberInput
             name="inputCar"
@@ -104,7 +120,7 @@ function Co2Calculator() {
           Km geflogen
           <br />
           <button type="submit">Hinzufügen</button>
-        </section>
+        </InputSection>
       </form>
       <section>
         <Table>
@@ -144,11 +160,11 @@ function Co2Calculator() {
         </Table>
       </section>
       <button
-      /*  type="reset"
+        type="reset"
         onClick={() => {
-          setProduct(initialProduct);
+          setValues(initialValues);
           setHasFormErrors(false);
-        }} */
+        }}
       >
         Alles zurücksetzen
       </button>
@@ -163,6 +179,20 @@ const CalculatorContainer = styled.div`
   border-radius: 10px;
   margin: 0.7rem;
   padding: 1rem;
+`;
+
+const ErrorMessage = styled.p`
+  background: var(--logo-one);
+  border: 1px solid var(--color-three);
+  border-radius: 5px;
+  color: var(--main-background);
+  font-weight: bold;
+  padding: 0.3rem;
+  width: fit-content;
+`;
+
+const InputSection = styled.section`
+  margin-top: 0.3rem;
 `;
 
 const Table = styled.table`
