@@ -143,15 +143,15 @@ function Co2Calculator() {
           </NumberInput>
           Km geflogen
           <br />
-          <button type="submit">Hinzufügen</button>
+          <Button type="submit">Hinzufügen</Button>
         </InputSection>
       </form>
       <section>
         <Table>
           <tbody>
             <tr>
-              <TableHeader>Gesamt Kilometer</TableHeader>
-              <TableHeader>Co2-Ausstoß</TableHeader>
+              <TableHeaderLeft>Gesamt Kilometer</TableHeaderLeft>
+              <TableHeaderRight> Co2-Ausstoß</TableHeaderRight>
             </tr>
             <tr>
               <td>{co2Calculation.carKm} Km Auto</td>
@@ -166,7 +166,7 @@ function Co2Calculator() {
               <TableDataRight>{co2Calculation.co2Flight} Kg Co2</TableDataRight>
             </tr>
             <tr>
-              <TableHeader>Co2 Budget</TableHeader>
+              <TableHeaderLeft>Co2 Budget</TableHeaderLeft>
             </tr>
             <tr>
               <td>Dein Jahresbudget: </td>
@@ -187,7 +187,7 @@ function Co2Calculator() {
           </tbody>
         </Table>
       </section>
-      <button
+      <Button
         type="reset"
         onClick={() => {
           setCo2Calculation(initialCalculationObject);
@@ -195,7 +195,7 @@ function Co2Calculator() {
         }}
       >
         Alles zurücksetzen
-      </button>
+      </Button>
     </CalculatorContainer>
   );
 }
@@ -227,10 +227,27 @@ const Table = styled.table`
   margin-top: 1rem;
 `;
 
-const TableHeader = styled.th`
+const TableHeaderLeft = styled.th`
   text-align: left;
+`;
+
+const TableHeaderRight = styled.th`
+  text-align: right;
 `;
 
 const TableDataRight = styled.td`
   text-align: right;
+  width: 40%;
+`;
+
+const Button = styled.button`
+  background-color: var(--color-two);
+  color: var(--logo-one);
+  border: 1px solid var(--color-three);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-left: 0.2rem;
+  margin-top: 0.3rem;
+  padding: 0.2rem;
+  width: fit-content;
 `;
