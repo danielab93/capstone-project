@@ -28,8 +28,6 @@ function MainPage() {
         (location) => location.kategorie === category
       );
       setFilteredLocations(updatedFilteredLocations);
-      console.log(updatedFilteredLocations);
-      console.log(filteredLocations);
     }
   };
 
