@@ -190,7 +190,7 @@ function Co2Calculator() {
       <button
         type="reset"
         onClick={() => {
-          setValues(initialCalculationObject);
+          setCo2Calculation(initialCalculationObject);
           setHasFormErrors(false);
         }}
       >
