@@ -63,7 +63,8 @@ function Co2Calculator() {
       });
       setValues(initialValues);
       setHasFormErrors(false);
-    } else if (values.inputTrain > 0) {
+    }
+    if (values.inputTrain > 0) {
       const totalTrainKm = co2Calculation.trainKm + values.inputTrain;
       const co2Train = (co2Calculation.trainKm + values.inputTrain) * 0.032;
       const co2TrainRounded = Math.round(co2Train * 100) / 100;
@@ -85,7 +86,8 @@ function Co2Calculator() {
       });
       setValues(initialValues);
       setHasFormErrors(false);
-    } else if (values.inputFlight > 0) {
+    }
+    if (values.inputFlight > 0) {
       const totalFlightKm = co2Calculation.flightKm + values.inputFlight;
       const co2Flight = (co2Calculation.flightKm + values.inputFlight) * 0.38;
       const co2FlightRounded = Math.round(co2Flight * 100) / 100;
