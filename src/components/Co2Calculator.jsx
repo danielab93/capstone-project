@@ -239,7 +239,7 @@ const TableHeaderRight = styled.th`
 
 const TableDataRight = styled.td`
   text-align: right;
-  width: 40%;
+  width: 45%;
 `;
 
 const Button = styled.button`
