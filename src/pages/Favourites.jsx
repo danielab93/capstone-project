@@ -38,13 +38,6 @@ function Favourites({
     <>
       <Header image={favoritenheader} altText="Favoriten Header" />
       <main>
-        <Filter
-          name="category"
-          value={favouriteCards.kategorie}
-          options={filterOptions(favouriteCards)}
-          onFilterLocations={onFilterLocations}
-          locations={favouriteCards}
-        />
         <section>{allFavourites}</section>
       </main>
       <FooterNavbar />
