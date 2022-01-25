@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import Map from "./Map";
 
 function ToggleButton({ contact, email, website }) {
   const [showMore, setShowMore] = useState(false);
@@ -99,6 +100,7 @@ function ToggleButton({ contact, email, website }) {
               </li>
             </EmailWebContainer>
           </ul>
+          <Map />
         </ContactContainer>
       )}
     </>
