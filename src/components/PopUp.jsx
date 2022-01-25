@@ -19,7 +19,7 @@ const ModalButton = styled.button`
   color: var(--logo-one);
   border: 1px solid var(--color-three);
   border-radius: 5px;
-  padding: 0.3rem;
+  padding: 0.2rem 0.3rem 0.2rem 0.3rem;
   position: relative;
   width: fit-content;
   margin-left: 0.5rem;
