@@ -41,6 +41,11 @@ function Restaurants({
   return (
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
+      <PopUp
+        text={
+          "Hunger? Hier findest du eine Auswahl der besten veganen und vegetarischen Restaurants in Hamburg!"
+        }
+      />
       <main>
         <Filter
           name="category"
@@ -49,11 +54,7 @@ function Restaurants({
           onFilterLocations={onFilterLocations}
           locations={restaurants}
         />
-        <PopUp
-          text={
-            "Hunger? Hier findest du eine Auswahl der besten veganen und vegetarischen Restaurants in Hamburg!"
-          }
-        />
+
         <section>{restaurantCards}</section>
       </main>
       <FooterNavbar />
