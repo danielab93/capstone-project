@@ -3,11 +3,23 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
 import InformationCards from "../components/InformationCards";
-
+import Filter from "../components/Filter";
 import { restaurants } from "../library/data.js";
+import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
-function Restaurants({ onAddToFavourites, favouriteCards }) {
-  const restaurantCards = restaurants.map((restaurant) => (
+function Restaurants({
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  locationsRestaurants,
+  onResetfilter,
+}) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+
+  const restaurantCards = locationsRestaurants.map((restaurant) => (
     <InformationCards
       key={restaurant.id}
       name={restaurant.name}
@@ -18,7 +30,7 @@ function Restaurants({ onAddToFavourites, favouriteCards }) {
       website={restaurant.website}
       image={restaurant.image}
       onAddToFavourites={onAddToFavourites}
-      restaurant={restaurant}
+      location={restaurant}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === restaurant.id
       )}
@@ -29,9 +41,15 @@ function Restaurants({ onAddToFavourites, favouriteCards }) {
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
       <main>
-        <h2>Restaurants</h2>
+        <Filter
+          name="category"
+          value={restaurants.kategorie}
+          options={filterOptions(restaurants)}
+          onFilterLocations={onFilterLocations}
+          locations={restaurants}
+        />
         <section>{restaurantCards}</section>
-     </main>
+      </main>
       <FooterNavbar />
     </>
   );

@@ -1,16 +1,10 @@
 import styled from "styled-components";
 
-function FavouriteButton({
-  onAddToFavourites,
-  isFavourite,
-  restaurant,
-  shop,
-  beauty,
-}) {
+function FavouriteButton({ onAddToFavourites, isFavourite, location }) {
   return (
     <>
       <FavouriteIcon
-        onClick={() => onAddToFavourites(restaurant || shop || beauty)}
+        onClick={() => onAddToFavourites(location)}
         width="20"
         height="20"
         viewBox="0 0 84 70"

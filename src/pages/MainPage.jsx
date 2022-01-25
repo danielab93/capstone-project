@@ -10,7 +10,27 @@ import Favourites from "../pages/Favourites";
 import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
 
+import { restaurants, shops, beautyspots } from "../library/data.js";
+
 function MainPage() {
+  const [locationsRestaurants, setLocationsRestaurants] = useState(restaurants);
+  const [locationsShops, setLocationsShops] = useState(shops);
+  const [locationsBeautyspots, setLocationsBeautyspots] = useState(beautyspots);
+  const [filteredLocations, setFilteredLocations] = useState([]);
+
+  const resetfilter = () => setFilteredLocations([]);
+
+  const handleFilterLocations = (category, locations) => {
+    if (category === "") {
+      setFilteredLocations(locations);
+    } else {
+      const updatedFilteredLocations = locations.filter(
+        (location) => location.kategorie === category
+      );
+      setFilteredLocations(updatedFilteredLocations);
+    }
+  };
+
   const localStorageFavouriteCards = loadFromLocal("favouriteCards");
   const [favouriteCards, setFavouriteCards] = useState(
     localStorageFavouriteCards ?? []
@@ -50,6 +70,13 @@ function MainPage() {
           path="/restaurants"
           element={
             <Restaurants
+              onResetfilter={resetfilter}
+              locationsRestaurants={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : locationsRestaurants
+              }
+              onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
             />
@@ -59,6 +86,13 @@ function MainPage() {
           path="/shopping"
           element={
             <Shopping
+              onResetfilter={resetfilter}
+              locationsShops={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : locationsShops
+              }
+              onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
             />
@@ -68,6 +102,13 @@ function MainPage() {
           path="/beauty"
           element={
             <Beauty
+              onResetfilter={resetfilter}
+              locationsBeautyspots={
+                filteredLocations.length > 0
+                  ? filteredLocations
+                  : locationsBeautyspots
+              }
+              onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
             />
@@ -77,8 +118,11 @@ function MainPage() {
           path="/favoriten"
           element={
             <Favourites
+              onResetfilter={resetfilter}
+              onFilterLocations={handleFilterLocations}
               onAddToFavourites={addToFavourites}
               favouriteCards={favouriteCards}
+              filteredLocations={filteredLocations}
             />
           }
         />

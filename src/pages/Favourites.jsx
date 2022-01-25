@@ -2,9 +2,24 @@ import FooterNavbar from "../components/FooterNavbar";
 import Header from "../components/Header";
 import favoritenheader from "../images/Favoriten.png";
 import InformationCards from "../components/InformationCards";
+import Filter from "../components/Filter";
+import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
-function Favourites({ onAddToFavourites, favouriteCards }) {
-  const allFavourites = favouriteCards?.map((favouriteCard) => (
+function Favourites({
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  filteredLocations,
+  onResetfilter,
+}) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+  const filteredFavourites =
+    filteredLocations.length > 0 ? filteredLocations : favouriteCards;
+
+  const allFavourites = filteredFavourites?.map((favouriteCard) => (
     <InformationCards
       key={favouriteCard?.id}
       name={favouriteCard?.name}
@@ -16,16 +31,13 @@ function Favourites({ onAddToFavourites, favouriteCards }) {
       image={favouriteCard?.image}
       onAddToFavourites={onAddToFavourites}
       isFavourite={true}
-      restaurant={favouriteCard}
-      shop={favouriteCard}
-      beauty={favouriteCard}
+      location={favouriteCard}
     />
   ));
   return (
     <>
       <Header image={favoritenheader} altText="Favoriten Header" />
       <main>
-        <h2>Favoriten</h2>
         <section>{allFavourites}</section>
       </main>
       <FooterNavbar />

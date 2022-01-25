@@ -3,10 +3,23 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import shoppingheader from "../images/Shopping.png";
 import InformationCards from "../components/InformationCards";
+import Filter from "../components/Filter";
 import { shops } from "../library/data.js";
+import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
-function Shopping({ onAddToFavourites, favouriteCards }) {
-  const shoppingCards = shops.map((shop) => (
+function Shopping({
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  locationsShops,
+  onResetfilter,
+}) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+
+  const shoppingCards = locationsShops.map((shop) => (
     <InformationCards
       key={shop.id}
       name={shop.name}
@@ -17,7 +30,7 @@ function Shopping({ onAddToFavourites, favouriteCards }) {
       website={shop.website}
       image={shop.image}
       onAddToFavourites={onAddToFavourites}
-      shop={shop}
+      location={shop}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === shop.id
       )}
@@ -27,7 +40,13 @@ function Shopping({ onAddToFavourites, favouriteCards }) {
     <>
       <Header image={shoppingheader} altText="Shopping Header" />
       <main>
-        <h2>Shopping</h2>
+        <Filter
+          name="category"
+          value={shops.kategorie}
+          options={filterOptions(shops)}
+          onFilterLocations={onFilterLocations}
+          locations={shops}
+        />
         <section>{shoppingCards}</section>
       </main>
       <FooterNavbar />

@@ -3,10 +3,23 @@ import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import beautyheader from "../images/Beauty.png";
 import InformationCards from "../components/InformationCards";
+import Filter from "../components/Filter";
 import { beautyspots } from "../library/data.js";
+import { filterOptions } from "../library/filterOptions";
+import { useEffect } from "react";
 
-function Beauty({ onAddToFavourites, favouriteCards }) {
-  const beautyCards = beautyspots.map((beauty) => (
+function Beauty({
+  locationsBeautyspots,
+  onAddToFavourites,
+  favouriteCards,
+  onFilterLocations,
+  onResetfilter,
+}) {
+  useEffect(() => {
+    onResetfilter();
+  }, []);
+
+  const beautyCards = locationsBeautyspots.map((beauty) => (
     <InformationCards
       key={beauty.id}
       name={beauty.name}
@@ -17,7 +30,7 @@ function Beauty({ onAddToFavourites, favouriteCards }) {
       website={beauty.website}
       image={beauty.image}
       onAddToFavourites={onAddToFavourites}
-      beauty={beauty}
+      location={beauty}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === beauty.id
       )}
@@ -28,7 +41,13 @@ function Beauty({ onAddToFavourites, favouriteCards }) {
     <>
       <Header image={beautyheader} altText="Beauty Header" />
       <main>
-        <h2>Beauty</h2>
+        <Filter
+          name="category"
+          value={beautyspots.kategorie}
+          options={filterOptions(beautyspots)}
+          onFilterLocations={onFilterLocations}
+          locations={beautyspots}
+        />
         <section>{beautyCards}</section>
       </main>
       <FooterNavbar />
