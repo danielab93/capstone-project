@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import Map from "./Map";
 
-function ToggleButton({ contact, email, website, position }) {
+function ToggleButton({ contact, email, website, center, position }) {
   const [showMore, setShowMore] = useState(false);
 
   function handleMoreClick() {
@@ -100,7 +100,7 @@ function ToggleButton({ contact, email, website, position }) {
               </li>
             </EmailWebContainer>
           </ul>
-          <Map position={position} />
+          <Map center={center} position={position} />
         </ContactContainer>
       )}
     </>

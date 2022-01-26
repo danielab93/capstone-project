@@ -13,6 +13,7 @@ function InformationCards({
   onAddToFavourites,
   isFavourite,
   location,
+  center,
   position,
 }) {
   return (
@@ -39,6 +40,7 @@ function InformationCards({
           contact={contact}
           email={email}
           website={website}
+          center={center}
           position={position}
         />
       </SingleCardContainer>

@@ -32,6 +32,7 @@ function Restaurants({
       image={restaurant.image}
       onAddToFavourites={onAddToFavourites}
       location={restaurant}
+      center={restaurant.center}
       position={restaurant.position}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === restaurant.id

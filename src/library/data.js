@@ -87,7 +87,7 @@ const restaurants = [
     email: "/",
     website: "https://azeitona.de/",
     image: azeitona,
-    center: [[53.56763591409667, 9.957898298571404]],
+    center: [[53.57306701299996, 9.956101662759979]],
     position: [
       [53.55905457479862, 9.965320713483667],
       [53.57929908599136, 9.946455698141582],
@@ -156,6 +156,7 @@ const restaurants = [
     email: "more@raw-like-sushi.de",
     website: "https://www.raw-like-sushi.de/",
     image: rawlikesushi,
+    center: [[53.592390537036415, 9.987268042320828]],
     position: [[53.592390537036415, 9.987268042320828]],
   },
 ];
@@ -182,6 +183,7 @@ const shops = [
     email: "info@biolose.de",
     website: "https://www.biolose.de/",
     image: biolose,
+    center: [[53.57550748076537, 9.954777298141416]],
     position: [[53.57550748076537, 9.954777298141416]],
   },
   {
@@ -212,6 +214,7 @@ const shops = [
     email: "info@stueckgut-hamburg.de",
     website: "https://www.stueckgut-hamburg.de",
     image: stueckgut,
+    center: [[53.55600089123965, 9.947578800680855]],
     position: [
       [53.55414407314953, 9.928118728789194],
       [53.557800131792014, 9.966950638572897],
@@ -236,6 +239,7 @@ const shops = [
     email: "karoviertel@glore-hamburg.de",
     website: "https://www.glore-hamburg.de/",
     image: glore,
+    center: [[53.55837106655937, 9.971231811598113]],
     position: [[53.55837106655937, 9.971231811598113]],
   },
 
@@ -258,6 +262,7 @@ const shops = [
     email: "vunderlandshop@gmail.com",
     website: "https://vunderland.de",
     image: vunderland,
+    center: [[53.55874564894386, 9.973465213447115]],
     position: [[53.55874564894386, 9.973465213447115]],
   },
   {
@@ -279,6 +284,7 @@ const shops = [
     email: "/",
     website: "https://www.bio-wochenmarkt-regionales.de/maerkte/eppendorf/",
     image: wochenmarkt,
+    center: [[53.59058781941377, 9.986915971119599]],
     position: [[53.59058781941377, 9.986915971119599]],
   },
 ];
@@ -305,6 +311,7 @@ const beautyspots = [
     email: "info@schnittstube-verde.de",
     website: "https://schnittstube-verde.de/",
     image: schnittstubeverde,
+    center: [[53.574700319821446, 10.016601026941107]],
     position: [[53.574700319821446, 10.016601026941107]],
   },
   {
@@ -326,6 +333,7 @@ const beautyspots = [
     email: "stine.vega.hair@gmail.com",
     website: "https://www.stinevega.com/",
     image: stinevega,
+    center: [[53.55773428762781, 10.00968329995378]],
     position: [[53.55773428762781, 10.00968329995378]],
   },
   {
@@ -347,6 +355,7 @@ const beautyspots = [
     email: "kundenservice@jeannie-nagelstudio.de",
     website: "http://jeannie-nagelstudio.de/",
     image: jeannie,
+    center: [[53.58961918678835, 10.01546562509276]],
     position: [[53.58961918678835, 10.01546562509276]],
   },
 
@@ -369,6 +378,7 @@ const beautyspots = [
     email: "info@naturkosmetikum.com",
     website: "https://www.naturkosmetikum.com/",
     image: heikevossberg,
+    center: [[53.581853121565814, 9.98010235577694]],
     position: [[53.581853121565814, 9.98010235577694]],
   },
   {
@@ -390,6 +400,7 @@ const beautyspots = [
     email: "info@mimulus-kosmetik.de",
     website: "https://mimulus-kosmetik.de/",
     image: mimulus,
+    center: [[53.56092658529051, 9.96490442694052]],
     position: [[53.56092658529051, 9.96490442694052]],
   },
 ];
