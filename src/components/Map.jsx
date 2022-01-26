@@ -5,7 +5,7 @@ function Map() {
   return (
     <>
       <MapContainer
-        style={{ height: "20px" }}
+        className="leaflet-container"
         center={[51.505, -0.09]}
         zoom={13}
         scrollWheelZoom={false}

@@ -61,6 +61,11 @@ select {
   font-weight: bold;
 }
 
+.leaflet-container {
+  height: 150px;
+  z-index: 5;
+}
+
 `;
 
 export default GlobalStyle;
