@@ -34,12 +34,8 @@ const restaurants = [
     email: "service@bodhihamburg.de",
     website: "https://www.bodhihamburg.de/",
     image: bodhi,
-    position: [
-      {
-        lat: 53.590464410896324,
-        lng: 10.01527545600581,
-      },
-    ],
+    center: [[53.590464410896324, 10.01527545600581]],
+    position: [[53.590464410896324, 10.01527545600581]],
   },
   {
     id: 2,
@@ -60,12 +56,8 @@ const restaurants = [
     email: "mama@mamaknows.de",
     website: "https://mamaknows.de/",
     image: mamalicious,
-    position: [
-      {
-        lat: 53.56379504588629,
-        lng: 9.959277438619218,
-      },
-    ],
+    center: [[53.56379504588629, 9.959277438619218]],
+    position: [[53.56379504588629, 9.959277438619218]],
   },
   {
     id: 3,
@@ -95,15 +87,10 @@ const restaurants = [
     email: "/",
     website: "https://azeitona.de/",
     image: azeitona,
+    center: [[53.56763591409667, 9.957898298571404]],
     position: [
-      {
-        lat: 53.55905457479862,
-        lng: 9.965320713483667,
-      },
-      {
-        lat: 53.57929908599136,
-        lng: 9.946455698141582,
-      },
+      [53.55905457479862, 9.965320713483667],
+      [53.57929908599136, 9.946455698141582],
     ],
   },
   {
@@ -143,19 +130,11 @@ const restaurants = [
     email: "info@vincent-vegan.com",
     website: "https://vincent-vegan.com/",
     image: vincentvegan,
+    center: [[53.552216857135434, 9.971671549073386]],
     position: [
-      {
-        lat: 53.55138708654599,
-        lng: 9.99591018464761,
-      },
-      {
-        lat: 53.55250904818329,
-        lng: 10.006002925125989,
-      },
-      {
-        lat: 53.55246834645038,
-        lng: 9.932411834820117,
-      },
+      [53.55138708654599, 9.99591018464761],
+      [53.55250904818329, 10.006002925125989],
+      [53.55246834645038, 9.932411834820117],
     ],
   },
   {
@@ -177,12 +156,7 @@ const restaurants = [
     email: "more@raw-like-sushi.de",
     website: "https://www.raw-like-sushi.de/",
     image: rawlikesushi,
-    position: [
-      {
-        lat: 53.592390537036415,
-        lng: 9.987268042320828,
-      },
-    ],
+    position: [[53.592390537036415, 9.987268042320828]],
   },
 ];
 
@@ -208,12 +182,7 @@ const shops = [
     email: "info@biolose.de",
     website: "https://www.biolose.de/",
     image: biolose,
-    position: [
-      {
-        lat: 53.57550748076537,
-        lng: 9.954777298141416,
-      },
-    ],
+    position: [[53.57550748076537, 9.954777298141416]],
   },
   {
     id: 7,
@@ -244,14 +213,8 @@ const shops = [
     website: "https://www.stueckgut-hamburg.de",
     image: stueckgut,
     position: [
-      {
-        lat: 53.55414407314953,
-        lng: 9.928118728789194,
-      },
-      {
-        lat: 53.557800131792014,
-        lng: 9.966950638572897,
-      },
+      [53.55414407314953, 9.928118728789194],
+      [53.557800131792014, 9.966950638572897],
     ],
   },
   {
@@ -273,12 +236,7 @@ const shops = [
     email: "karoviertel@glore-hamburg.de",
     website: "https://www.glore-hamburg.de/",
     image: glore,
-    position: [
-      {
-        lat: 53.55837106655937,
-        lng: 9.971231811598113,
-      },
-    ],
+    position: [[53.55837106655937, 9.971231811598113]],
   },
 
   {
@@ -300,12 +258,7 @@ const shops = [
     email: "vunderlandshop@gmail.com",
     website: "https://vunderland.de",
     image: vunderland,
-    position: [
-      {
-        lat: 53.55874564894386,
-        lng: 9.973465213447115,
-      },
-    ],
+    position: [[53.55874564894386, 9.973465213447115]],
   },
   {
     id: 10,
@@ -326,12 +279,7 @@ const shops = [
     email: "/",
     website: "https://www.bio-wochenmarkt-regionales.de/maerkte/eppendorf/",
     image: wochenmarkt,
-    position: [
-      {
-        lat: 53.59058781941377,
-        lng: 9.986915971119599,
-      },
-    ],
+    position: [[53.59058781941377, 9.986915971119599]],
   },
 ];
 
@@ -357,12 +305,7 @@ const beautyspots = [
     email: "info@schnittstube-verde.de",
     website: "https://schnittstube-verde.de/",
     image: schnittstubeverde,
-    position: [
-      {
-        lat: 53.574700319821446,
-        lng: 10.016601026941107,
-      },
-    ],
+    position: [[53.574700319821446, 10.016601026941107]],
   },
   {
     id: 12,
@@ -383,12 +326,7 @@ const beautyspots = [
     email: "stine.vega.hair@gmail.com",
     website: "https://www.stinevega.com/",
     image: stinevega,
-    position: [
-      {
-        lat: 53.55773428762781,
-        lng: 10.00968329995378,
-      },
-    ],
+    position: [[53.55773428762781, 10.00968329995378]],
   },
   {
     id: 13,
@@ -409,12 +347,7 @@ const beautyspots = [
     email: "kundenservice@jeannie-nagelstudio.de",
     website: "http://jeannie-nagelstudio.de/",
     image: jeannie,
-    position: [
-      {
-        lat: 53.58961918678835,
-        lng: 10.01546562509276,
-      },
-    ],
+    position: [[53.58961918678835, 10.01546562509276]],
   },
 
   {
@@ -436,12 +369,7 @@ const beautyspots = [
     email: "info@naturkosmetikum.com",
     website: "https://www.naturkosmetikum.com/",
     image: heikevossberg,
-    position: [
-      {
-        lat: 53.581853121565814,
-        lng: 9.98010235577694,
-      },
-    ],
+    position: [[53.581853121565814, 9.98010235577694]],
   },
   {
     id: 15,
@@ -462,12 +390,7 @@ const beautyspots = [
     email: "info@mimulus-kosmetik.de",
     website: "https://mimulus-kosmetik.de/",
     image: mimulus,
-    position: [
-      {
-        lat: 53.56092658529051,
-        lng: 9.96490442694052,
-      },
-    ],
+    position: [[53.56092658529051, 9.96490442694052]],
   },
 ];
 
