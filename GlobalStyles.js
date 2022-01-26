@@ -62,7 +62,9 @@ select {
 }
 
 .leaflet-container {
+  border-radius: 5px;
   height: 150px;
+  margin: 0.5rem 0.2rem 0.2rem 0.2rem;
   z-index: 5;
 }
 
