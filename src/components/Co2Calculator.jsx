@@ -158,13 +158,21 @@ function Co2Calculator() {
             </tr>
             <tr>
               <td>Bereits verbraucht: </td>
-              <TableDataRight>
+              <TableDataRight
+                style={{
+                  color: co2Calculation.co2BudgetSpent < 1500 ? "green" : "red",
+                }}
+              >
                 {co2Calculation.co2BudgetSpent} Kg Co2
               </TableDataRight>
             </tr>
             <tr>
               <td>Noch übrig: </td>
-              <TableDataRight>
+              <TableDataRight
+                style={{
+                  color: co2Calculation.co2BudgetLeft < 0 ? "red" : "green",
+                }}
+              >
                 {co2Calculation.co2BudgetLeft} Kg Co2
               </TableDataRight>
             </tr>
