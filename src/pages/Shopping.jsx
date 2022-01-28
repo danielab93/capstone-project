@@ -32,6 +32,8 @@ function Shopping({
       image={shop.image}
       onAddToFavourites={onAddToFavourites}
       location={shop}
+      center={shop.center}
+      position={shop.position}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === shop.id
       )}

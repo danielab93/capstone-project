@@ -13,6 +13,8 @@ function InformationCards({
   onAddToFavourites,
   isFavourite,
   location,
+  center,
+  position,
 }) {
   return (
     <>
@@ -34,7 +36,13 @@ function InformationCards({
             <CardImage src={image} alt="" />
           </div>
         </InfoContainer>
-        <ToggleButton contact={contact} email={email} website={website} />
+        <ToggleButton
+          contact={contact}
+          email={email}
+          website={website}
+          center={center}
+          position={position}
+        />
       </SingleCardContainer>
     </>
   );

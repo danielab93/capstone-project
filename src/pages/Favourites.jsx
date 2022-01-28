@@ -29,6 +29,8 @@ function Favourites({
       email={favouriteCard?.email}
       website={favouriteCard?.website}
       image={favouriteCard?.image}
+      position={favouriteCard?.position}
+      center={favouriteCard?.center}
       onAddToFavourites={onAddToFavourites}
       isFavourite={true}
       location={favouriteCard}

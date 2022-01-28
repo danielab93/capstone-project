@@ -32,6 +32,8 @@ function Beauty({
       image={beauty.image}
       onAddToFavourites={onAddToFavourites}
       location={beauty}
+      center={beauty.center}
+      position={beauty.position}
       isFavourite={favouriteCards?.some(
         (favourite) => favourite.id === beauty.id
       )}
