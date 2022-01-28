@@ -24,7 +24,7 @@ const ModalButton = styled.button`
   position: absolute;
   right: 1.3rem;
   top: 4.95rem;
-  z-index: 200;
+  z-index: 10;
 `;
 
 const ModalDiv = styled.div`
