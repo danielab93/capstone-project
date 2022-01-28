@@ -23,7 +23,7 @@ describe("Remove Card from favourites", () => {
       { name: "Tajmahal", id: 2 },
     ];
     const favouriteCardToRemove = { name: "Tajmahal", id: 2 };
-    removeFromFavourites(favouriteCards, favouriteCardToRemove);
+    const result = removeFromFavourites(favouriteCards, favouriteCardToRemove);
 
     expect(result).toEqual([{ name: "Gasthaus zur Post", id: 1 }]);
   });
