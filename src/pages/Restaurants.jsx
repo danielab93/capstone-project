@@ -4,6 +4,7 @@ import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
 import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
+import PopUp from "../components/PopUp";
 import { restaurants } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
 import { useEffect } from "react";
@@ -40,6 +41,11 @@ function Restaurants({
   return (
     <>
       <Header image={restaurantheader} altText="Restaurant Header" />
+      <PopUp
+        text={
+          "Hunger? Hier findest du eine Auswahl der besten veganen und vegetarischen Restaurants in Hamburg!"
+        }
+      />
       <main>
         <Filter
           name="category"
@@ -48,6 +54,7 @@ function Restaurants({
           onFilterLocations={onFilterLocations}
           locations={restaurants}
         />
+
         <section>{restaurantCards}</section>
       </main>
       <FooterNavbar />

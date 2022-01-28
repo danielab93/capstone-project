@@ -4,6 +4,7 @@ import FooterNavbar from "../components/FooterNavbar";
 import shoppingheader from "../images/Shopping.png";
 import InformationCards from "../components/InformationCards";
 import Filter from "../components/Filter";
+import PopUp from "../components/PopUp";
 import { shops } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
 import { useEffect } from "react";
@@ -46,6 +47,11 @@ function Shopping({
           options={filterOptions(shops)}
           onFilterLocations={onFilterLocations}
           locations={shops}
+        />
+        <PopUp
+          text={
+            "Nachhaltig shoppen? Das geht! Hier findest du Geheimtipps zum umweltfreundlichen Einkaufen."
+          }
         />
         <section>{shoppingCards}</section>
       </main>
