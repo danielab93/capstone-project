@@ -12,6 +12,12 @@ import NotFound from "../pages/NotFound";
 
 import { restaurants, shops, beautyspots } from "../library/data.js";
 
+import {
+  alreadyInFavourites,
+  removeFromFavourites,
+  addCardToFavourites,
+} from "../library/favourites";
+
 function MainPage() {
   const [locationsRestaurants, setLocationsRestaurants] = useState(restaurants);
   const [locationsShops, setLocationsShops] = useState(shops);
@@ -41,18 +47,7 @@ function MainPage() {
   }, [favouriteCards]);
 
   function addToFavourites(favouriteCardToAdd) {
-    if (
-      favouriteCards.some(
-        (everyFavouriteCard) => everyFavouriteCard?.id === favouriteCardToAdd.id
-      )
-    ) {
-      const updatedFavouriteCards = favouriteCards.filter(
-        (everyFavouriteCard) => everyFavouriteCard?.id !== favouriteCardToAdd.id
-      );
-      setFavouriteCards(updatedFavouriteCards);
-    } else {
-      setFavouriteCards([...favouriteCards, favouriteCardToAdd]);
-    }
+    setFavouriteCards(addCardToFavourites(favouriteCards, favouriteCardToAdd));
   }
 
   return (
