@@ -12,11 +12,9 @@ import NotFound from "../pages/NotFound";
 
 import { restaurants, shops, beautyspots } from "../library/data.js";
 
-import {
-  alreadyInFavourites,
-  removeFromFavourites,
-  addCardToFavourites,
-} from "../library/favourites";
+import { addCardToFavourites } from "../library/favourites";
+
+import { filterLocations } from "../library/filtered";
 
 function MainPage() {
   const [locationsRestaurants, setLocationsRestaurants] = useState(restaurants);
@@ -26,7 +24,11 @@ function MainPage() {
 
   const resetfilter = () => setFilteredLocations([]);
 
-  const handleFilterLocations = (category, locations) => {
+  function handleFilterLocations(category, locations) {
+    setFilteredLocations(filterLocations(category, locations));
+  }
+
+  /* const handleFilterLocations = (category, locations) => {
     if (category === "") {
       setFilteredLocations(locations);
     } else {
@@ -35,7 +37,7 @@ function MainPage() {
       );
       setFilteredLocations(updatedFilteredLocations);
     }
-  };
+  }; */
 
   const localStorageFavouriteCards = loadFromLocal("favouriteCards");
   const [favouriteCards, setFavouriteCards] = useState(

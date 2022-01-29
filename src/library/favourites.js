@@ -1,9 +1,8 @@
 function alreadyInFavourites(favouriteCards, favouriteCardToAdd) {
   return favouriteCards.some(
     (everyFavouriteCard) => everyFavouriteCard?.id === favouriteCardToAdd.id
-  );
+  ); // return true or false
 }
-// return true or false
 
 function removeFromFavourites(favouriteCards, favouriteCardToRemove) {
   const updatedFavouriteCards = favouriteCards.filter(
