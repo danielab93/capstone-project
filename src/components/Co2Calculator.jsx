@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { saveToLocal, loadFromLocal } from "../library/localStorage";
 import NumberInput from "./NumberInput";
 /* import isProductValid from "../library/validation"; */
+import { carCalculation } from "../library/calculator";
 
 function Co2Calculator() {
   const initialValues = {
