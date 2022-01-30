@@ -28,7 +28,7 @@ function MainPage() {
     setFilteredLocations(filterLocations(category, locations));
   }
 
-  /* const handleFilterLocations = (category, locations) => {
+  /*   const handleFilterLocations = (category, locations) => {
     if (category === "") {
       setFilteredLocations(locations);
     } else {

@@ -1,4 +1,8 @@
-import { alreadyInFavourites, removeFromFavourites } from "./favourites";
+import {
+  alreadyInFavourites,
+  removeFromFavourites,
+  addCardToFavourites,
+} from "./favourites";
 
 describe("is card already on the favourites list", () => {
   it("should return false if the card is not on the favourites list", () => {

@@ -1,8 +1,4 @@
-import {
-  isCategoryEmpty,
-  showAllLocations,
-  filterLocationsByCategory,
-} from "./filtered";
+import { isCategoryEmpty, filterLocationsByCategory } from "./filtered";
 
 describe("is category empty", () => {
   it("should return true if NO category is selected", () => {
