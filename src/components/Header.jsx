@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Routes, Route, NavLink, Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function Header({ image, altText }) {
   return (
@@ -12,6 +13,11 @@ function Header({ image, altText }) {
 }
 
 export default Header;
+
+Header.propTypes = {
+  image: PropTypes.img,
+  altText: PropTypes.string,
+};
 
 const StyledHeader = styled.header`
   background: var(--main-background);
