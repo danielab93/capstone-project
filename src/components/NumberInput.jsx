@@ -3,13 +3,20 @@ import styled from "styled-components";
 function NumberInput({ name, value, onNumberInputChange, children }) {
   function handleChange(event) {
     const parsedValue = parseFloat(event.target.value);
+    console.log(parsedValue);
     onNumberInputChange(event.target.name, parsedValue);
   }
 
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <Input type="number" name={name} value={value} onChange={handleChange} />
+      <Input
+        type="number"
+        name={name}
+        value={value}
+        onChange={handleChange}
+        pattern="[0-9]+([,\.][0-9])?"
+      />
     </>
   );
 }

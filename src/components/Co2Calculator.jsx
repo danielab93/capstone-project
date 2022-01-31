@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { saveToLocal, loadFromLocal } from "../library/localStorage";
 import NumberInput from "./NumberInput";
 /* import isProductValid from "../library/validation"; */
-import { carCalculation } from "../library/calculator";
+import { calculateCo2 } from "../library/calculator";
 
 function Co2Calculator() {
   const initialValues = {
@@ -48,43 +48,9 @@ function Co2Calculator() {
       values.inputTrain > 0 ||
       values.inputFlight > 0
     ) {
-      const totalCarKm = co2Calculation.carKm + values.inputCar;
-      const co2Car = (co2Calculation.carKm + values.inputCar) * 0.119;
-      const co2CarRounded = Math.round(co2Car * 100) / 100;
-      const totalCo2Car = Math.round(values.inputCar * 0.119 * 100) / 100;
+      const co2CalculationResult = calculateCo2(co2Calculation, values);
 
-      const totalTrainKm = co2Calculation.trainKm + values.inputTrain;
-      const co2Train = (co2Calculation.trainKm + values.inputTrain) * 0.032;
-      const co2TrainRounded = Math.round(co2Train * 100) / 100;
-      const totalCo2Train = Math.round(values.inputTrain * 0.032 * 100) / 100;
-
-      const totalFlightKm = co2Calculation.flightKm + values.inputFlight;
-      const co2Flight = (co2Calculation.flightKm + values.inputFlight) * 0.38;
-      const co2FlightRounded = Math.round(co2Flight * 100) / 100;
-      const totalCo2Flight = Math.round(values.inputFlight * 0.38 * 100) / 100;
-
-      const co2BudgetSpent =
-        co2Calculation.co2BudgetSpent +
-        Math.round((totalCo2Car + totalCo2Train + totalCo2Flight) * 100) / 100;
-
-      const co2BudgetLeft =
-        co2Calculation.co2BudgetLeft -
-        Math.round((totalCo2Car + totalCo2Train + totalCo2Flight) * 100) / 100;
-
-      setCo2Calculation({
-        ...co2Calculation,
-        carKm: totalCarKm,
-        co2Car: co2CarRounded,
-
-        trainKm: totalTrainKm,
-        co2Train: co2TrainRounded,
-
-        flightKm: totalFlightKm,
-        co2Flight: co2FlightRounded,
-
-        co2BudgetSpent: Math.round(co2BudgetSpent * 100) / 100,
-        co2BudgetLeft: Math.round(co2BudgetLeft * 100) / 100,
-      });
+      setCo2Calculation(co2CalculationResult);
       setValues(initialValues);
       setHasFormErrors(false);
     } else {
