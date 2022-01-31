@@ -1,0 +1,23 @@
+import { Meta, Story } from "@storybook/addon-docs";
+
+import Header from "./Header";
+
+<Meta title="Components/Header" component={Header} />
+
+# Header component
+
+The Card component represents a card with detailed information about a book with its title and optionally its author.
+
+export const Template = (args) => <Header {...args} />;
+
+<Story
+  name="Header"
+  args={{
+    color: "#49B8B0",
+    text: "Lorem ipsum",
+    title: "Harry Potter und die Kammer des Schreckens",
+    isActive: true,
+  }}
+>
+  {Template.bind({})}
+</Story>
