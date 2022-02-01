@@ -9,7 +9,13 @@ function NumberInput({ name, value, onNumberInputChange, children }) {
   return (
     <>
       <label htmlFor={name}>{children}</label>
-      <Input type="number" name={name} value={value} onChange={handleChange} />
+      <Input
+        type="number"
+        name={name}
+        value={value}
+        onChange={handleChange}
+        pattern="[0-9]+([,\.][0-9])?"
+      />
     </>
   );
 }

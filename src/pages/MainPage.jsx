@@ -12,6 +12,10 @@ import NotFound from "../pages/NotFound";
 
 import { restaurants, shops, beautyspots } from "../library/data.js";
 
+import { addCardToFavourites } from "../library/favourites";
+
+import { filterLocations } from "../library/filtered";
+
 function MainPage() {
   const [locationsRestaurants, setLocationsRestaurants] = useState(restaurants);
   const [locationsShops, setLocationsShops] = useState(shops);
@@ -20,7 +24,11 @@ function MainPage() {
 
   const resetfilter = () => setFilteredLocations([]);
 
-  const handleFilterLocations = (category, locations) => {
+  function handleFilterLocations(category, locations) {
+    setFilteredLocations(filterLocations(category, locations));
+  }
+
+  /*   const handleFilterLocations = (category, locations) => {
     if (category === "") {
       setFilteredLocations(locations);
     } else {
@@ -29,7 +37,7 @@ function MainPage() {
       );
       setFilteredLocations(updatedFilteredLocations);
     }
-  };
+  }; */
 
   const localStorageFavouriteCards = loadFromLocal("favouriteCards");
   const [favouriteCards, setFavouriteCards] = useState(
@@ -41,18 +49,7 @@ function MainPage() {
   }, [favouriteCards]);
 
   function addToFavourites(favouriteCardToAdd) {
-    if (
-      favouriteCards.some(
-        (everyFavouriteCard) => everyFavouriteCard?.id === favouriteCardToAdd.id
-      )
-    ) {
-      const updatedFavouriteCards = favouriteCards.filter(
-        (everyFavouriteCard) => everyFavouriteCard?.id !== favouriteCardToAdd.id
-      );
-      setFavouriteCards(updatedFavouriteCards);
-    } else {
-      setFavouriteCards([...favouriteCards, favouriteCardToAdd]);
-    }
+    setFavouriteCards(addCardToFavourites(favouriteCards, favouriteCardToAdd));
   }
 
   return (
