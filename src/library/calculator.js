@@ -22,13 +22,13 @@ function calculateCo2(co2Calculation, values) {
   );
 
   return {
-    carKm: totalCarKm,
+    carKm: Math.round(totalCarKm * 100) / 100,
     co2Car: co2CarRounded,
 
-    trainKm: totalTrainKm,
+    trainKm: Math.round(totalTrainKm * 100) / 100,
     co2Train: co2TrainRounded,
 
-    flightKm: totalFlightKm,
+    flightKm: Math.round(totalFlightKm * 100) / 100,
     co2Flight: co2FlightRounded,
 
     co2BudgetSpent: co2BudgetSpent,
@@ -96,10 +96,7 @@ function calculateBudgetSpent(
   totalCo2Train,
   totalCo2Flight
 ) {
-  return (
-    co2BudgetSpent +
-    Math.round((totalCo2Car + totalCo2Train + totalCo2Flight) * 100) / 100
-  );
+  return co2BudgetSpent + (totalCo2Car + totalCo2Train + totalCo2Flight);
 }
 
 function calculateBudgetLeft(
@@ -108,10 +105,7 @@ function calculateBudgetLeft(
   totalCo2Train,
   totalCo2Flight
 ) {
-  return (
-    co2BudgetLeft -
-    Math.round((totalCo2Car + totalCo2Train + totalCo2Flight) * 100) / 100
-  );
+  return co2BudgetLeft - (totalCo2Car + totalCo2Train + totalCo2Flight);
 }
 
 export {

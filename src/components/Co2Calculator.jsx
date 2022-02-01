@@ -50,6 +50,9 @@ function Co2Calculator() {
     ) {
       const co2CalculationResult = calculateCo2(co2Calculation, values);
 
+      console.log(co2Calculation);
+      console.log(values);
+
       setCo2Calculation(co2CalculationResult);
       setValues(initialValues);
       setHasFormErrors(false);
