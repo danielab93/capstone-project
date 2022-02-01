@@ -114,4 +114,6 @@ export {
   trainCalculation,
   flightCalculation,
   calculateBudget,
+  calculateBudgetSpent,
+  calculateBudgetLeft,
 };

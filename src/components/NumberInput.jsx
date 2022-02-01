@@ -3,7 +3,6 @@ import styled from "styled-components";
 function NumberInput({ name, value, onNumberInputChange, children }) {
   function handleChange(event) {
     const parsedValue = parseFloat(event.target.value);
-    console.log(parsedValue);
     onNumberInputChange(event.target.name, parsedValue);
   }
 
