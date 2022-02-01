@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Routes, Route, NavLink, Link } from "react-router-dom";
 
 function Header({ image, altText }) {
   return (

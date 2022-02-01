@@ -1,19 +1,15 @@
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { saveToLocal, loadFromLocal } from "../library/localStorage";
 import { useState, useEffect } from "react";
 import MainMenu from "../components/MainMenu";
-
 import Restaurants from "../pages/Restaurants";
 import Shopping from "../pages/Shopping";
 import Beauty from "../pages/Beauty";
 import Favourites from "../pages/Favourites";
 import Calculator from "../pages/Calculator";
 import NotFound from "../pages/NotFound";
-
 import { restaurants, shops, beautyspots } from "../library/data.js";
-
 import { addCardToFavourites } from "../library/favourites";
-
 import { filterLocations } from "../library/filtered";
 
 function MainPage() {
@@ -27,17 +23,6 @@ function MainPage() {
   function handleFilterLocations(category, locations) {
     setFilteredLocations(filterLocations(category, locations));
   }
-
-  /*   const handleFilterLocations = (category, locations) => {
-    if (category === "") {
-      setFilteredLocations(locations);
-    } else {
-      const updatedFilteredLocations = locations.filter(
-        (location) => location.kategorie === category
-      );
-      setFilteredLocations(updatedFilteredLocations);
-    }
-  }; */
 
   const localStorageFavouriteCards = loadFromLocal("favouriteCards");
   const [favouriteCards, setFavouriteCards] = useState(

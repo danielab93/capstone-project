@@ -1,15 +1,12 @@
+import { useEffect } from "react";
 import FooterNavbar from "../components/FooterNavbar";
 import Header from "../components/Header";
 import favoritenheader from "../images/Favoriten.png";
 import InformationCards from "../components/InformationCards";
-import Filter from "../components/Filter";
-import { filterOptions } from "../library/filterOptions";
-import { useEffect } from "react";
 
 function Favourites({
   onAddToFavourites,
   favouriteCards,
-  onFilterLocations,
   filteredLocations,
   onResetfilter,
 }) {

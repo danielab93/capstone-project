@@ -7,7 +7,6 @@ function NotFound() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/");
-      // Redirect auf die Home
     }, 5000);
   }, []);
 

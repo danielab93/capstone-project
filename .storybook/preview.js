@@ -1,5 +1,4 @@
 import React from "react";
-
 import GlobalStyle from "../src/GlobalStyles";
 
 export const decorators = [

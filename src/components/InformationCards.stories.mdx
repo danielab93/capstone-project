@@ -1,0 +1,24 @@
+import { Meta, Story } from "@storybook/addon-docs";
+import InformationCards from "./InformationCards";
+
+<Meta title="components/InformationCards" component={InformationCards} />
+
+# InformationCards Component
+
+CHANGE THIS!!! The Card component represents a card with detailed information about a book with its title and optionally its author.
+
+export const Template = (args) => <InformationCards {...args} />;
+
+<Story name="InformationCards"
+args={{
+    name: "Sushi Restaurant",
+    location: "Sommerweg 25, 34328 Hamburg",
+    category: "Sushi",
+    info: "sehr lecker",
+    contact="040 54542234",
+    email= "sushi@sushi.de",
+    website="sushi-hamburg.de",
+}}
+>
+ {Template.bind({})}
+</Story>

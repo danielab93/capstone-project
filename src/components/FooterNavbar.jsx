@@ -1,5 +1,5 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Routes, Route, NavLink, Link, Outlet } from "react-router-dom";
 
 function FooterNavbar() {
   return (
