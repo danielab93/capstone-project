@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { useEffect } from "react";
 import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import beautyheader from "../images/Beauty.png";
@@ -7,7 +7,6 @@ import Filter from "../components/Filter";
 import PopUp from "../components/PopUp";
 import { beautyspots } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
-import { useEffect } from "react";
 
 function Beauty({
   locationsBeautyspots,

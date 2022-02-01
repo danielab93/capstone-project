@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { useState } from "react";
+import styled from "styled-components";
 import Map from "./Map";
 
 function ToggleButton({ contact, email, website, center, position }) {

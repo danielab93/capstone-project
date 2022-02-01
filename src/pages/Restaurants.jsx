@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { useEffect } from "react";
 import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import restaurantheader from "../images/Restaurants.png";
@@ -7,7 +7,6 @@ import Filter from "../components/Filter";
 import PopUp from "../components/PopUp";
 import { restaurants } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
-import { useEffect } from "react";
 
 function Restaurants({
   onAddToFavourites,

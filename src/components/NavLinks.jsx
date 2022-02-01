@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavLinks() {
   return (

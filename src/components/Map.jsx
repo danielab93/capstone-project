@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 function Map({ center, position }) {

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import { useEffect } from "react";
 import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
 import shoppingheader from "../images/Shopping.png";
@@ -7,7 +7,6 @@ import Filter from "../components/Filter";
 import PopUp from "../components/PopUp";
 import { shops } from "../library/data.js";
 import { filterOptions } from "../library/filterOptions";
-import { useEffect } from "react";
 
 function Shopping({
   onAddToFavourites,

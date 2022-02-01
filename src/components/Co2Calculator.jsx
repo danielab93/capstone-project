@@ -1,8 +1,7 @@
-import styled from "styled-components";
 import { useEffect, useState } from "react";
-import { saveToLocal, loadFromLocal } from "../library/localStorage";
+import styled from "styled-components";
 import NumberInput from "./NumberInput";
-/* import isProductValid from "../library/validation"; */
+import { saveToLocal, loadFromLocal } from "../library/localStorage";
 import { calculateCo2 } from "../library/calculator";
 
 function Co2Calculator() {
