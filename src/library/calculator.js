@@ -103,5 +103,4 @@ export {
   flightCalculation,
   calculateBudgetSpent,
   calculateBudgetLeft,
-  co2Calculator,
 };
