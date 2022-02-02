@@ -8,7 +8,9 @@ function NewFirstScreen() {
         <HeadlineInsideContainer>
           <Headline1>Willkommen bei</Headline1>
           <LogoImage src={logo} alt="Logo" />
-          <Headline2>Deine App für ein nachhaltiges Leben in Hamburg</Headline2>
+          <Headline2>
+            Deine App für ein <br /> nachhaltiges Leben <br /> in Hamburg
+          </Headline2>
         </HeadlineInsideContainer>
       </HeadlineOutsideContainer>
     </>
