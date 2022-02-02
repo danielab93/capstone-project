@@ -188,7 +188,7 @@ const shops = [
   },
   {
     id: 7,
-    name: "Stückgut - Unverpackt Einkaufen",
+    name: "Stückgut",
     kategorie: "Lebensmittel & Drogerie",
     info: "Lebensmittel sowie Produkte für Haushalt und Körperhygiene - unverpackt und umweltverträglich.",
     kontakt: [
@@ -361,7 +361,7 @@ const beautyspots = [
 
   {
     id: 14,
-    name: "NATURKOSMETIKUM - Heike Vossberg",
+    name: "Naturkosmetikum",
     kategorie: "Kosmetik",
     info: "Jede Haut ist empfindsam und einzigartig. Und genau so behandeln wir sie.",
     kontakt: [

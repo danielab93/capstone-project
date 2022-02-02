@@ -53,7 +53,7 @@ function ToggleButton({ contact, email, website, center, position }) {
   return (
     <>
       <Button onClick={handleMoreClick}>
-        {showMore ? "Weniger" : "Mehr"} Informationen
+        {showMore ? "Weniger" : "Mehr"} Infos
       </Button>
       {showMore && (
         <ContactContainer>
@@ -118,12 +118,12 @@ const EmailWebContainer = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: var(--logo-two);
+  background-color: var(--color-two);
   color: var(--logo-one);
   border: none;
   border-radius: 5px;
-  font-size: 0.8rem;
-  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
   padding: 0.2rem;
   width: 50%;
 `;

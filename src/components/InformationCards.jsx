@@ -51,9 +51,10 @@ function InformationCards({
 export default InformationCards;
 
 const SingleCardContainer = styled.section`
+  box-shadow: 3px 3px 8px 5px var(--logo-two);
   background: var(--main-background);
   color: var(--color-one);
-  border: 3px solid var(--color-three);
+  /* border: 3px solid var(--color-three); */
   border-radius: 10px;
   margin: 1.2rem;
   padding: 0.3rem;

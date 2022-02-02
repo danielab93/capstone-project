@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 :root {
-  --main-background:  #FEFAE0; // Beige
+  --main-background:  #FFFCEC; // Beige
 
   /* LOGO COLORS */
   --logo-one: #344E41; // Dark Green Logo

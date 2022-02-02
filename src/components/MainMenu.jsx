@@ -20,12 +20,12 @@ const NavContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 25%;
   a {
     background: var(--logo-two);
     color: var(--logo-one);
-    border: 3px solid var(--color-one);
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
     text-decoration: none;
     padding: 0.5rem;
     font-size: 2rem;
