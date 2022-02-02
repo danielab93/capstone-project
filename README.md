@@ -1,4 +1,4 @@
-# capstone-project 🌿
+# Capstone Project 🌿
 Welcome to my capstone-project "nacHHaltig" - your sustainable companion for a more sustainable life in Hamburg. With this App you can find several vegetarian and vegan restaurants, spots for sustainable shopping and also beauty salons and hairdressers which only use crueltyfree and fresh products! Use the filterfunction to find an Asian restaurant. You can also use the favorites function to collect your favorite restaurants, stores and beauty spots in the favorites section.
 
 ## Link to my App
