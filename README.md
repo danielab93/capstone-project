@@ -5,13 +5,10 @@ Welcome to my capstone-project "nacHHaltig" - your sustainable companion for a m
 To see the complete app please click this link - nacHHaltig
 
 ## Use this App locally
-Click on "Code" and take the SSH Key to clone the repo locally with your terminal.
-
-Then run:
-
-npm install
-run the development server: npm run dev
+- Click on "Code" and take the SSH Key to clone the repo locally with your terminal.
+- Then run: npm install
+- Run the development server with: npm run dev
 
 Open http://localhost:3000 with your browser to see the result.
 
-You can start editing the App by modifying the components.
+You can start editing the App by modifying the components & pages.
