@@ -114,15 +114,15 @@ export default FooterNavbar;
 const NavbarStyled = styled.footer`
   background-color: var(--main-background);
   border-radius: 10px;
+  bottom: 0rem;
   box-shadow: 3px 3px 8px 5px var(--logo-two);
   display: flex;
   justify-content: space-evenly;
-  position: fixed;
-  right: 0;
   left: 0;
-  bottom: 0rem;
   margin: 0.7rem 0.7rem;
   padding: 0.7rem 0 0.5rem 0;
+  position: fixed;
+  right: 0;
   z-index: 100;
 
   a svg {

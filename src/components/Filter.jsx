@@ -31,9 +31,9 @@ export default Filter;
 
 const Select = styled.select`
   background-color: var(--color-two);
-  color: var(--logo-one);
   border: none;
   border-radius: 6px;
+  color: var(--logo-one);
   font-size: 1rem;
   margin: 1.2rem 0rem 0rem 1.3rem;
   padding: 0.2rem;

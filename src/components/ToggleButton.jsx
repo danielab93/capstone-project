@@ -119,9 +119,9 @@ const EmailWebContainer = styled.div`
 
 const Button = styled.button`
   background-color: var(--color-two);
-  color: var(--logo-one);
   border: none;
   border-radius: 5px;
+  color: var(--logo-one);
   font-size: 0.85rem;
   margin-top: 0.2rem;
   padding: 0.2rem;

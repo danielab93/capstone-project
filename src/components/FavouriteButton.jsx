@@ -26,10 +26,10 @@ function FavouriteButton({ onAddToFavourites, isFavourite, location }) {
 export default FavouriteButton;
 
 const FavouriteIcon = styled.svg`
-  float: right;
-  width: 2rem;
-  margin-right: -0.2rem;
-  vertical-align: middle;
   fill: ${(props) => props.fill};
+  float: right;
+  margin-right: -0.2rem;
   stroke: ${(props) => props.stroke};
+  vertical-align: middle;
+  width: 2rem;
 `;

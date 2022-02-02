@@ -19,8 +19,8 @@ export default NewFirstScreen;
 
 const HeadlineOutsideContainer = styled.div`
   background-color: var(--main-background);
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
 `;
 
 const HeadlineInsideContainer = styled.div`
@@ -40,6 +40,6 @@ const Headline2 = styled.h2`
 `;
 
 const LogoImage = styled.img`
-  width: 20rem;
   align-self: center;
+  width: 20rem;
 `;

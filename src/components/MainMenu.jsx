@@ -17,27 +17,22 @@ function MainMenu() {
 export default MainMenu;
 
 const NavContainer = styled.div`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 25%;
+  margin-top: 30%;
   a {
     background: var(--logo-two);
-    color: var(--logo-one);
     border: none;
     border-radius: 10px;
-    text-decoration: none;
-    padding: 0.5rem;
+    color: var(--logo-one);
+    display: block;
     font-size: 2rem;
     font-weight: 900;
     margin-bottom: 1.3rem;
-    display: block;
-    width: 70%;
+    padding: 0.5rem;
     text-align: center;
-  }
-  a.active {
-    background: var(--logo-one);
-    color: var(--logo-two);
-    border: 3px solid var(--color-one);
+    text-decoration: none;
+    width: 70%;
   }
 `;

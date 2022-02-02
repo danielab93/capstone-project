@@ -51,29 +51,28 @@ function InformationCards({
 export default InformationCards;
 
 const SingleCardContainer = styled.section`
-  box-shadow: 3px 3px 8px 5px var(--logo-two);
   background: var(--main-background);
-  color: var(--color-one);
-  /* border: 3px solid var(--color-three); */
   border-radius: 10px;
+  box-shadow: 3px 3px 8px 5px var(--logo-two);
+  color: var(--color-one);
   margin: 1.2rem;
   padding: 0.3rem;
 `;
 
 const CardHeadline = styled.h3`
   background-color: var(--logo-two);
-  color: var(--logo-one);
   border-radius: 5px;
+  color: var(--logo-one);
   margin: 0 0 0.5rem 0;
   padding: 0.2rem;
 `;
 
 const InfoContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
 `;
 
 const CategoryText = styled.li`
@@ -88,7 +87,7 @@ const CardImage = styled.img`
   border-radius: 5px;
   display: block;
   float: right;
-  width: 160px;
   height: 160px;
   object-fit: cover;
+  width: 160px;
 `;

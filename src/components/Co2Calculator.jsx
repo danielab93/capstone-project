@@ -196,9 +196,9 @@ const TableDataRight = styled.td`
 
 const Button = styled.button`
   background-color: var(--color-two);
-  color: var(--logo-one);
   border: 1px solid var(--color-three);
   border-radius: 5px;
+  color: var(--logo-one);
   font-size: 0.85rem;
   margin-left: 0.2rem;
   margin-top: 0.3rem;

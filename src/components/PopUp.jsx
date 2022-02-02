@@ -16,9 +16,9 @@ export default PopUp;
 
 const ModalButton = styled.button`
   background-color: var(--color-two);
-  color: var(--logo-one);
   border: none;
   border-radius: 5px;
+  color: var(--logo-one);
   font-size: 1rem;
   padding: 0.2rem 0.3rem 0.2rem 0.3rem;
   position: absolute;
