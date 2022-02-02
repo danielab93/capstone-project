@@ -156,8 +156,9 @@ function Co2Calculator() {
 export default Co2Calculator;
 
 const CalculatorContainer = styled.div`
-  border: 3px solid var(--color-three);
+  border: none;
   border-radius: 10px;
+  box-shadow: 3px 3px 8px 5px var(--color-two);
   margin: 0.7rem;
   padding: 1rem;
 `;
@@ -198,7 +199,7 @@ const Button = styled.button`
   color: var(--logo-one);
   border: 1px solid var(--color-three);
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin-left: 0.2rem;
   margin-top: 0.3rem;
   padding: 0.2rem;
