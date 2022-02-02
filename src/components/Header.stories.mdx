@@ -1,18 +1,16 @@
 import { Meta, Story } from "@storybook/addon-docs";
 import { BrowserRouter } from "react-router-dom";
 import Header from "./Header";
-import Beauty from "./library/images/Beauty.png";
+import Beauty from "../images/Beauty.png";
 
 <Meta title="components/Header" component={Header} />
 
-# Footer Component
+# Header Component
 
-The Card component represents a card with detailed information about a book with its title and optionally its author.
+The Header component shows a header that includes an image for the respective page.
 
 <Story name="Header">
   <BrowserRouter>
-    <Header src={Beauty} altText={Logoimage} />
+    <Header image={Beauty} altText="Logoimage" />
   </BrowserRouter>
 </Story>
-
-// WIE BEKOMME ICH DAS IMAGE HIER REIN???
