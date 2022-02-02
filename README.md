@@ -4,7 +4,7 @@ Welcome to my capstone-project "nacHHaltig" - your sustainable companion for a m
 
 ## Link to my App
 
-To see the complete app please click this link [nacHHaltig](https://capstone-project-lovat.vercel.app/)
+To see the complete app please click this link [nacHHaltig](https://capstone-project-lovat.vercel.app/) and use the "inspect"-mode in your browser because it's a mobile application.
 
 ## Use this App locally
 
