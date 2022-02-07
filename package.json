@@ -7,7 +7,9 @@
     "preview": "vite preview",
     "test": "jest --watchAll --verbose",
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "leaflet": "^1.7.1",
@@ -17,15 +19,21 @@
     "react-router-dom": "^6.2.1",
     "react-spinners": "^0.11.0",
     "reactjs-popup": "^2.0.5",
+    "storybook": "^6.4.17",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@storybook/addon-actions": "^6.4.17",
+    "@storybook/addon-essentials": "^6.4.17",
+    "@storybook/addon-links": "^6.4.17",
+    "@storybook/react": "^6.4.17",
     "@types/jest": "^27.4.0",
     "@vitejs/plugin-react": "^1.0.7",
     "babel-jest": "^27.4.6",
+    "babel-loader": "^8.2.3",
     "babel-preset-react-app": "^10.0.1",
     "cypress": "^9.4.1",
     "jest": "^27.4.7",
