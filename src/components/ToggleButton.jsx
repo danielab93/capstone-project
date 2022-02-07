@@ -11,7 +11,7 @@ function ToggleButton({ contact, email, website, center, position }) {
 
   const contactData = contact.map((singleContact, index) => {
     return (
-      <SingleContactContainer key={index}>
+      <SingleContactContainer data-testid="location-info" key={index}>
         <li>
           <ContactTitle> Standort: </ContactTitle> {singleContact.standort}
         </li>
@@ -52,7 +52,7 @@ function ToggleButton({ contact, email, website, center, position }) {
 
   return (
     <>
-      <Button onClick={handleMoreClick}>
+      <Button data-testid="toggle-btn" onClick={handleMoreClick}>
         {showMore ? "Weniger" : "Mehr"} Infos
       </Button>
       {showMore && (

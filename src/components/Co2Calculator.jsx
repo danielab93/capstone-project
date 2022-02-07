@@ -59,7 +59,11 @@ function Co2Calculator() {
 
   return (
     <CalculatorContainer>
-      {hasFormErrors && <ErrorMessage>Bitte prüfe Deine Eingabe!</ErrorMessage>}
+      {hasFormErrors && (
+        <ErrorMessage data-testid="error-message">
+          Bitte prüfe Deine Eingabe!
+        </ErrorMessage>
+      )}
       <form onSubmit={handleSubmit}>
         <InputSection>
           Ich bin <br />
@@ -88,7 +92,9 @@ function Co2Calculator() {
           </NumberInput>
           Km geflogen
           <br />
-          <Button type="submit">Hinzufügen</Button>
+          <Button data-testid="submit-btn" type="submit">
+            Hinzufügen
+          </Button>
         </InputSection>
       </form>
       <section>
