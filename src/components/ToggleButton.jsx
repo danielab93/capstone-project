@@ -100,7 +100,7 @@ function ToggleButton({ contact, email, website, center, position }) {
               </li>
             </EmailWebContainer>
           </ul>
-          <Map center={center} position={position} />
+          {center && position && <Map center={center} position={position} />}
         </ContactContainer>
       )}
     </>
